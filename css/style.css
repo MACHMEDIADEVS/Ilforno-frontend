@@ -1,0 +1,68 @@
+/* Importa Google Fonts si lo necesitas, por ejemplo: */
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap'); */
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Nota: Los estilos para header y footer seguirán aplicando aunque se carguen por JS */
+header {
+    background-color: #343a40; /* Color de fondo oscuro para el header */
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: #fff !important;
+}
+
+.navbar-nav .nav-link {
+    color: #e9ecef !important;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link.active { /* Estilo para el enlace activo */
+    color: #ffffff !important;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffffff !important;
+}
+
+footer {
+    background-color: #343a40; /* Color de fondo oscuro para el footer */
+    color: #e9ecef;
+    padding: 2rem 0;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+footer a {
+    color: #e9ecef;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #ffffff;
+}
+
+section {
+    padding: 60px 0;
+}
+
+/* Estilos para el contenido principal de las páginas */
+.main-content {
+    min-height: calc(100vh - 120px); /* Ajusta según la altura de tu header y footer */
+    padding-top: 20px;
+}
