@@ -1,31 +1,577 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restaurant Name - [Nombre de la Página]</title> <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Il Forno a Legna - Events</title>
+  
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/style.css"/>
+  
+  <!-- FontAwesome -->
+  <script src="https://kit.fontawesome.com/YOUR_KIT_CODE.js" crossorigin="anonymous"></script>
 
-    <script src="https://kit.fontawesome.com/YOUR_KIT_CODE.js" crossorigin="anonymous"></script>
+  <style>
+    /* HEADER */
+    #main-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1030;
+      background-color: transparent !important;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      padding: 15px 0;
+    }
+    #main-header.scrolled {
+      background-color: rgba(0, 0, 0, 0.55) !important;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    /* HERO */
+    .hero-events-section {
+      position: relative;
+      color: white;
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      height: 60vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .hero-events-section .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55);
+      z-index: 1;
+    }
+    .hero-events-section .container {
+      position: relative;
+      z-index: 2;
+    }
+   
+    @media (max-width: 768px) {
+      .hero-events-section {
+        height: 70vh;
+      }
+    }
+
+
+
+/* seccion introduccion */
+/* Colores personalizados */
+.text-gold {
+  color: #bf9861;
+}
+
+/* Imagen con efecto */
+#event-introduction img {
+  border: 0px solid #bf9861;
+  transition: transform 0.3s ease;
+}
+#event-introduction img:hover {
+  transform: scale(1.03);
+}
+
+/* Fondo */
+.bg-black {
+  background-color: #1a1a1a !important;
+}
+
+/* Texto */
+#event-introduction p {
+  color: #dacfbd;
+}
+
+
+
+/* ====== Event Services ====== */
+#event-services {
+  background-color: #02332d; /* Fondo controlado solo desde CSS */
+}
+
+/* Colores */
+.text-gold {
+  color: #bf9861;
+}
+
+/* Cards de servicios */
+.service-card {
+  border: 2px solid #bf9861;
+  background-color: #111111;
+  border-radius: 5px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(191, 152, 97, 0.4);
+}
+
+/* Texto */
+.service-text {
+  color: #dacfbd;
+  font-size: 0.95rem;
+}
+
+
+
+
+
+/* ====== Event Packages ====== */
+/* Overlay oscuro */
+#event-packages .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/* Color título */
+.text-gold {
+  color: #bf9861;
+}
+
+/* Cards uniformes */
+.package-card {
+  background-color: rgba(17, 17, 17, 0.95);
+  border: 2px solid #bf9861;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.package-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(191, 152, 97, 0.4);
+}
+
+/* Lista */
+.package-card ul li {
+  color: #dacfbd;
+  font-size: 0.95rem;
+  padding: 4px 0;
+}
+
+/* Badge */
+.badge-popular {
+  background-color: #bf9861;
+  color: #1a1a1a;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+/* Botón */
+.btn-outline-gold {
+  background-color: transparent;
+  color: #bf9861;
+  border: 2px solid #bf9861;
+  font-weight: bold;
+  padding: 8px 20px;
+  border-radius: 8px;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+}
+.btn-outline-gold:hover {
+  background-color: #bf9861;
+  color: #1a1a1a;
+}
+
+/* Responsivo */
+@media (max-width: 991px) {
+  .package-card {
+    height: auto;
+  }
+}
+
+
+
+
+/* ====== Sección Reserva ====== */
+#booking-form {
+  background-color: #1a1a1a;
+}
+
+.text-gold {
+  color: #bf9861;
+}
+
+.btn-gold {
+  background-color: #bf9861;
+  color: #1a1a1a;
+  font-weight: bold;
+  padding: 10px 25px;
+  border-radius: 8px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  border: none;
+}
+.btn-gold:hover {
+  background-color: #b0844f;
+  color: #fff;
+}
+
+.booking-card {
+  background-color: #1f1f1f;
+  border-radius: 10px;
+  color: #fff;
+}
+
+/* Inputs y Selects */
+.booking-card .form-control, 
+.booking-card .form-select {
+  border-radius: 6px;
+  border: 1px solid #444;
+  background-color: #fff;
+  color: #000;
+}
+
+/* Responsivo */
+@media (max-width: 991px) {
+  #booking-form .row {
+    text-align: center;
+  }
+  .booking-card {
+    margin-top: 20px;
+  }
+}
+
+
+
+
+
+
+/* seccion contacus */
+.text-gold {
+  color: #bf9861;
+}
+
+.bg-black {
+  background-color: #1a1a1a !important;
+}
+
+.btn-gold {
+  background-color: #bf9861;
+  color: #1a1a1a;
+  font-weight: bold;
+  padding: 10px 25px;
+  border-radius: 8px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+.btn-gold:hover {
+  background-color: #b0844f;
+  color: #fff;
+}
+
+#why-choose-us ul li {
+  color: #dacfbd;
+  font-size: 1rem;
+}
+
+
+  </style>
 </head>
 <body>
 
-    <div id="header-placeholder"></div>
+  <!-- Header -->
+  <div id="header-placeholder"></div>
 
-    <main class="main-content">
-        <div class="container my-5">
-            <h1>Contenido de [Nombre de la Página]</h1>
-            <p>Este es el espacio para el contenido único de esta página. ¡Rellénalo con información, imágenes, formularios, etc.!</p>
-            </div>
-    </main>
+  <!-- HERO Events -->
+  <section class="hero-events-section" style="background-image: url('img/events.jpg');">
+    <div class="overlay"></div>
+    <div class="container">
+      <h1 class="display-4 fw-bold">Events</h1>
+      <p class="lead">Celebrate your special moments with Il Forno where food, ambiance, and service make every event unforgettable.</p>
+    </div>
+  </section>
 
-    <div id="footer-placeholder"></div>
+  
+<!-- ====== Event Introduction ====== -->
+<section id="event-introduction" class="py-5 bg-black text-light">
+  <div class="container">
+    <div class="row align-items-center g-4">
+      
+      <!-- Texto -->
+      <div class="col-lg-6">
+        <h2 class="fw-bold text-gold mb-4">Host Your Event at Il Forno a Legna</h2>
+        <p class="mb-3">
+          At Il Forno a Legna, we offer a one-of-a-kind Italian dining experience that’s perfect for any event, from birthdays to corporate gatherings. Whether you’re hosting an intimate dinner or a larger celebration, our team will work with you to make your event truly memorable.
+        </p>
+        <p>
+          Enjoy our signature wood-fired pizzas, fresh pasta, and traditional Italian dishes in the heart of Rahway, NJ. Let us help you create the perfect setting for your special occasion, with flexible packages and personalized service to ensure everything goes smoothly.
+        </p>
+      </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+      <!-- Imagen -->
+      <div class="col-lg-6">
+        <img src="img/events-intro.png" alt="Il Forno Event" class="img-fluid rounded shadow">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ====== Event Services ====== -->
+<section id="event-services" class="py-5 text-light">
+  <div class="container">
+    <h2 class="text-center text-gold fw-bold mb-5">Event Services at Il Forno a Legna</h2>
     
-    <script src="js/script.js"></script>
+    <div class="row g-4">
 
-    <script src="js/load-components.js"></script>
+      <!-- Card 1 -->
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="service-card text-center p-4 h-100">
+          <i class="fas fa-chair fa-3x text-gold mb-3"></i>
+          <h5 class="fw-bold text-gold">Private Dining Space</h5>
+          <p class="service-text">
+            Host your event in our cozy yet elegant dining room with seating for small or large groups.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="service-card text-center p-4 h-100">
+          <i class="fas fa-utensils fa-3x text-gold mb-3"></i>
+          <h5 class="fw-bold text-gold">Catering</h5>
+          <p class="service-text">
+            Enjoy Il Forno’s delicious food at your location with our pizzas, pastas, salads, and desserts.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="service-card text-center p-4 h-100">
+          <i class="fas fa-truck fa-3x text-gold mb-3"></i>
+          <h5 class="fw-bold text-gold">Wood-Fired Pizza Truck</h5>
+          <p class="service-text">
+            Bring our pizza trailer to your outdoor event and watch pizzas bake in our custom oven.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="service-card text-center p-4 h-100">
+          <i class="fas fa-concierge-bell fa-3x text-gold mb-3"></i>
+          <h5 class="fw-bold text-gold">Full Event Support</h5>
+          <p class="service-text">
+            From setup to cleanup, our team ensures your event runs smoothly with personalized menus.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ====== Event Packages ====== -->
+<section id="event-packages" class="py-5" 
+         style="background-image: url('img/events-intro.png'); background-size: cover; background-position: center; position: relative;">
+  <div class="overlay"></div>
+  <div class="container position-relative">
+    <h2 class="text-center fw-bold text-gold mb-5">Event Packages</h2>
+    
+    <div class="row g-4">
+
+      <!-- Package 1 -->
+      <div class="col-md-4 d-flex">
+        <div class="package-card text-center p-4 flex-fill">
+          <h5 class="fw-bold text-gold">Classic Italian Experience</h5>
+          <p class="price text-gold fw-bold fs-4 mb-4">$45 <span class="fs-6">per person</span></p>
+          <ul class="list-unstyled mb-4">
+            <li>2 Wood-Fired Pizzas per person</li>
+            <li>Family-Style Pasta</li>
+            <li>Garden Salad</li>
+            <li>Garlic Bread</li>
+            <li>Dessert Platter</li>
+          </ul>
+          <a href="#booking-form" class="btn btn-outline-gold">Book Now</a>
+        </div>
+      </div>
+
+      <!-- Package 2 -->
+      <div class="col-md-4 d-flex">
+        <div class="package-card highlight text-center p-4 flex-fill">
+          <span class="badge-popular">Most Popular</span>
+          <h5 class="fw-bold text-gold">Premium Italian Feast</h5>
+          <p class="price text-gold fw-bold fs-4 mb-4">$65 <span class="fs-6">per person</span></p>
+          <ul class="list-unstyled mb-4">
+            <li>3 Wood-Fired Pizzas per person</li>
+            <li>2 Pasta Options</li>
+            <li>Antipasto Platter</li>
+            <li>Roasted Chicken or Pollo Parmigiana</li>
+            <li>Salads & Dessert Platter</li>
+          </ul>
+          <a href="#booking-form" class="btn btn-outline-gold">Book Now</a>
+        </div>
+      </div>
+
+      <!-- Package 3 -->
+      <div class="col-md-4 d-flex">
+        <div class="package-card text-center p-4 flex-fill">
+          <h5 class="fw-bold text-gold">Ultimate Italian Celebration</h5>
+          <p class="price text-gold fw-bold fs-4 mb-4">$85 <span class="fs-6">per person</span></p>
+          <ul class="list-unstyled mb-4">
+            <li>4 Wood-Fired Pizzas per person</li>
+            <li>Full Pasta Buffet</li>
+            <li>Antipasto Platter & Mixed Greens</li>
+            <li>Pollo Parmigiana, Chicken Francese, Roast Beef</li>
+            <li>Dessert Platter</li>
+          </ul>
+          <a href="#booking-form" class="btn btn-outline-gold">Book Now</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<!-- ====== Booking Form ====== -->
+<section id="booking-form" class="py-5">
+  <div class="container">
+    <div class="row g-4 align-items-center">
+
+      <!-- Imagen izquierda -->
+      <div class="col-lg-6">
+        <img src="img/private-events.png" alt="Event Booking" class="img-fluid rounded shadow">
+      </div>
+
+      <!-- Formulario derecha -->
+      <div class="col-lg-6">
+        <div class="booking-card p-4 shadow">
+          <h3 class="fw-bold text-gold mb-4">Book Your Event</h3>
+          
+          <form>
+            <!-- Full Name & Phone -->
+            <div class="row mb-3">
+              <div class="col">
+                <input type="text" class="form-control" placeholder="Full Name *" required>
+              </div>
+              <div class="col">
+                <input type="tel" class="form-control" placeholder="Phone Number" required>
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="mb-3">
+              <input type="email" class="form-control" placeholder="Email Address *" required>
+            </div>
+
+            <!-- Preferred Package -->
+            <div class="mb-3">
+              <select class="form-select">
+                <option value="">Preferred Package</option>
+                <option>Classic Italian Experience</option>
+                <option>Premium Italian Feast</option>
+                <option>Ultimate Italian Celebration</option>
+              </select>
+            </div>
+
+            <!-- Event Date -->
+            <div class="mb-3">
+              <input type="date" class="form-control" required>
+            </div>
+
+            <!-- Event Type -->
+            <div class="mb-3">
+              <input type="text" class="form-control" placeholder="Event Type (Birthday, Corporate, Wedding, etc.)">
+            </div>
+
+            <!-- Number of Guests -->
+            <div class="mb-3">
+              <input type="number" class="form-control" placeholder="Number of Guests *" required>
+            </div>
+
+            <!-- Special Requests -->
+            <div class="mb-3">
+              <textarea class="form-control" rows="4" placeholder="Special Requests / Notes"></textarea>
+            </div>
+
+            <!-- Submit -->
+            <button type="submit" class="btn btn-gold w-100">Submit Event Request</button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- ====== Why Choose Us ====== -->
+<section id="why-choose-us" class="py-5 bg-dark text-light">
+  <div class="container">
+    <div class="row align-items-center g-4">
+
+      <!-- Texto -->
+      <div class="col-lg-6">
+        <h2 class="fw-bold text-gold mb-4">Why Choose Il Forno a Legna for Your Event?</h2>
+        <ul class="list-unstyled">
+          <li class="mb-3"><i class="fas fa-check text-gold me-2"></i> Best Italian food in Rahway, NJ</li>
+          <li class="mb-3"><i class="fas fa-check text-gold me-2"></i> Personalized event service</li>
+          <li class="mb-3"><i class="fas fa-check text-gold me-2"></i> Flexible packages for all occasions</li>
+          <li class="mb-3"><i class="fas fa-check text-gold me-2"></i> Elegant and cozy dining atmosphere</li>
+          <li class="mb-3"><i class="fas fa-check text-gold me-2"></i> Wood-fired pizza truck available</li>
+        </ul>
+      </div>
+
+      <!-- Imagen -->
+      <div class="col-lg-6">
+        <img src="img/event2.png" alt="Why Choose Us" class="img-fluid rounded shadow">
+      </div>
+
+    </div>
+
+    <!-- CTA Final -->
+    <div class="text-center mt-5">
+      <h3 class="fw-bold text-gold mb-3">Ready to plan your unforgettable event?</h3>
+      <a href="#booking-form" class="btn btn-gold px-5 py-2">Request Your Event Quote Today</a>
+    </div>
+  </div>
+</section>
+
+
+
+
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/load-components.js"></script>
+
+  <!-- Scroll Header -->
+  <script>
+    document.addEventListener('scroll', function() {
+      const header = document.getElementById('main-header');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+  </script>
+
 </body>
 </html>

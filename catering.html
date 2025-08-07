@@ -1,31 +1,816 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restaurant Name - [Nombre de la Página]</title> <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Il Forno a Legna - Catering</title>
+  
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/style.css"/>
+  
+  <!-- FontAwesome -->
+  <script src="https://kit.fontawesome.com/YOUR_KIT_CODE.js" crossorigin="anonymous"></script>
 
-    <script src="https://kit.fontawesome.com/YOUR_KIT_CODE.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+
+  <style>
+    /* HEADER */
+    #main-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1030;
+      background-color: transparent !important;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      padding: 15px 0;
+    }
+    #main-header.scrolled {
+      background-color: rgba(0, 0, 0, 0.55) !important;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    /* HERO */
+    .hero-events-section {
+      position: relative;
+      color: white;
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      height: 60vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .hero-events-section .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55);
+      z-index: 1;
+    }
+    .hero-events-section .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    @media (max-width: 768px) {
+      .hero-events-section {
+        height: 70vh;
+      }
+    }
+
+
+
+/* SECCION INTRODUCCION */
+/* Texto en dorado */
+.text-gold {
+  color: #bf9861;
+}
+
+/* Imagen con efecto */
+#catering-introduction img {
+  transition: transform 0.3s ease;
+}
+#catering-introduction img:hover {
+  transform: scale(1.03);
+}
+
+/* Fondo negro */
+.bg-black {
+  background-color: #1a1a1a !important;
+}
+
+/* Color de texto */
+#catering-introduction p {
+  color: #dacfbd;
+}
+
+
+
+
+
+/* ====== Why Choose Catering Section ====== */
+#why-catering-icons {
+  background-color: #02332d;
+  position: relative;
+  z-index: 1;
+}
+
+#why-catering-icons .container {
+  position: relative;
+  z-index: 2;
+}
+
+#why-catering-icons h2 {
+  color: #bf9861;
+}
+
+#why-catering-icons .why-card {
+  background-color: #dacfbd;              /* fondo beige claro */
+  border: 2px solid #bf9861;              /* borde dorado */
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+#why-catering-icons .why-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+#why-catering-icons .why-card i,
+#why-catering-icons .why-card h5 {
+  color: #bf9861;
+}
+
+#why-catering-icons .why-card p {
+  font-size: 0.95rem;
+  color: #1a1a1a; /* contraste con fondo claro */
+}
+
+
+
+
+
+/* ====== CATERING PAGE STYLES ====== */
+
+/* General Text Styling */
+.text-gold {
+  color: #bf9861;
+}
+
+/* Hero Section */
+.catering-hero {
+  background-image: url('img/catering-hero.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  padding: 100px 0;
+  color: white;
+}
+
+.catering-hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  z-index: 0;
+}
+
+.catering-hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Section Titles */
+.section-title {
+  color: #bf9861;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+/* Why Choose Section */
+.why-choose {
+  background-color: #111;
+  color: #fff;
+  padding: 60px 0;
+}
+.why-choose ul {
+  list-style: none;
+  padding: 0;
+}
+.why-choose li::before {
+  content: "\\2022";
+  color: #bf9861;
+  font-weight: bold;
+  display: inline-block; 
+  width: 1em;
+  margin-left: -1em;
+}
+
+
+
+
+
+
+/* Catering Packages */
+/* ====== Catering Packages Grid Style ====== */
+#catering-packages .overlay-dark {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+#catering-packages .container {
+  position: relative;
+  z-index: 2;
+}
+
+.text-gold {
+  color: #bf9861;
+}
+
+.package-card {
+  background-color: rgba(17, 17, 17, 0.95);
+  border: 2px solid #bf9861;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 1.5rem 1.2rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  transition: none; /* 🔒 sin efecto hover */
+}
+
+.package-card h5,
+.package-card .price,
+.package-card p {
+  color: #bf9861;
+}
+
+.package-card ul {
+  padding: 0;
+  list-style: none;
+  margin-bottom: 1.5rem;
+}
+
+.package-card ul li {
+  color: #dacfbd;
+  font-size: 0.95rem;
+  padding: 4px 0;
+  text-align: center;
+}
+
+.package-card .btn {
+  margin-top: auto;
+  background-color: transparent;
+  color: #bf9861;
+  border: 2px solid #bf9861;
+  font-weight: bold;
+  padding: 8px 20px;
+  border-radius: 8px;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+}
+
+.package-card .btn:hover {
+  background-color: #bf9861;
+  color: #1a1a1a;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .package-card {
+    height: auto;
+  }
+}
+
+
+
+
+
+
+
+/* ========== BOOK EVENT: Mobile-Friendly ========== */
+#book-event {
+  background-color: #1a1a1a;
+}
+
+#book-event h3 {
+  color: #bf9861;
+}
+
+/* Form container */
+#book-event .bg-black {
+  background-color: #111;
+  border-radius: 8px;
+  padding: 2rem;
+}
+
+/* Form fields */
+#book-event .form-control,
+#book-event .form-select {
+  border-radius: 8px;
+  border: none;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+}
+
+#book-event .form-control:focus,
+#book-event .form-select:focus {
+  box-shadow: 0 0 0 0.2rem rgba(191, 152, 97, 0.3);
+  border: none;
+}
+
+/* Button */
+#book-event .btn-gold {
+  background-color: #bf9861;
+  color: #1a1a1a;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+#book-event .btn-gold:hover {
+  background-color: #d1aa6e;
+  color: #111;
+}
+
+/* Image styling */
+#book-event img {
+  border-radius: 8px;
+  width: 100%;
+  height: auto;
+}
+
+/* Responsive tweaks */
+@media (max-width: 767px) {
+  #book-event .bg-black {
+    padding: 1.5rem 1rem;
+  }
+
+  #book-event .btn-gold {
+    font-size: 0.9rem;
+    padding: 0.65rem;
+  }
+
+  #book-event input,
+  #book-event select,
+  #book-event textarea {
+    font-size: 0.95rem;
+  }
+}
+
+
+
+/* ====== Modern Accordion Style ====== */
+.modern-accordion {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+#faqs {
+  background-color: #0f0f0f; /* Cambia este valor por el color que desees */
+}
+
+
+.accordion-item {
+  background: #121212;
+  border-left: 4px solid #bf9861;
+  margin-bottom: 1.25rem;
+  border-radius: 6px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.accordion-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.2rem;
+  background-color: #1a1a1a;
+  color: #bf9861;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  position: relative;
+}
+
+.accordion-title i {
+  transition: transform 0.3s ease;
+}
+
+.accordion-item input:checked + .accordion-title i {
+  transform: rotate(180deg);
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  background-color: #191919;
+  color: #dacfbd;
+  font-size: 0.95rem;
+  padding: 0 1.2rem;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+}
+
+.accordion-item input:checked ~ .accordion-content {
+  max-height: 500px;
+  padding: 1rem 1.2rem;
+}
+
+/* Responsive */
+@media (max-width: 575px) {
+  .accordion-title {
+    font-size: 0.95rem;
+    padding: 0.85rem 1rem;
+  }
+
+  .accordion-content {
+    font-size: 0.9rem;
+  }
+}
+
+
+
+  </style>
 </head>
 <body>
 
-    <div id="header-placeholder"></div>
+  <!-- Header -->
+  <div id="header-placeholder"></div>
 
-    <main class="main-content">
-        <div class="container my-5">
-            <h1>Contenido de [Nombre de la Página]</h1>
-            <p>Este es el espacio para el contenido único de esta página. ¡Rellénalo con información, imágenes, formularios, etc.!</p>
+  <!-- HERO Catering -->
+  <section class="hero-events-section" style="background-image: url('img/hero-image.png');">
+    <div class="overlay"></div>
+    <div class="container">
+      <h1 class="display-4 fw-bold">Catering</h1>
+      <p class="lead">Let us bring the flavors of Italy to your home, office, or celebration.</p>
+    </div>
+  </section>
+
+
+
+<!-- ====== Catering Introduction ====== -->
+<section id="catering-introduction" class="py-5 bg-black text-light">
+  <div class="container">
+    <div class="row align-items-center g-4">
+      
+      <!-- Texto -->
+      <div class="col-lg-6">
+        <h2 class="fw-bold text-gold mb-4">Il Forno a Legna Catering – Authentic Italian Cuisine Delivered to Your Event</h2>
+        <p class="mb-3">
+          At Il Forno a Legna, we bring the flavors of Italy directly to your event with our catering services. Whether you're hosting a corporate event, a wedding, or a private party, we offer a variety of menu options to suit every occasion.
+        </p>
+        <p>
+          From our signature wood-fired pizzas to our freshly prepared pastas, each dish is made with the finest ingredients, ensuring your event is both delicious and memorable. Let us take care of the food, so you can focus on enjoying your celebration!
+        </p>
+      </div>
+
+      <!-- Imagen -->
+      <div class="col-lg-6">
+        <img src="img/join-our-team.png" alt="Catering Il Forno" class="img-fluid rounded shadow">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ====== Why Choose Catering with Background Color ====== -->
+<section id="why-catering-icons" class="py-5">
+  <div class="container position-relative">
+    <h2 class="text-center fw-bold text-gold mb-5">Why Choose Il Forno a Legna Catering?</h2>
+
+    <div class="row g-4 justify-content-center">
+
+      <!-- Card 1 -->
+      <div class="col-12 col-sm-6 col-lg-4">
+        <div class="why-card text-center p-4 rounded h-100">
+          <i class="fas fa-fire fa-2x mb-3"></i>
+          <h5 class="fw-bold text-gold">Authentic Flavors</h5>
+          <p class="small">Wood-fired pizza, handmade pastas, and classic recipes from Italy.</p>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-12 col-sm-6 col-lg-4">
+        <div class="why-card text-center p-4 rounded h-100">
+          <i class="fas fa-cogs fa-2x mb-3"></i>
+          <h5 class="fw-bold text-gold">Custom Menus</h5>
+          <p class="small">Menus tailored to your event, preferences, and dietary needs.</p>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-12 col-sm-6 col-lg-4">
+        <div class="why-card text-center p-4 rounded h-100">
+          <i class="fas fa-truck-moving fa-2x mb-3"></i>
+          <h5 class="fw-bold text-gold">On-Site Catering</h5>
+          <p class="small">Live pizza-making at your event with our mobile oven trailer.</p>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col-12 col-sm-6 col-lg-6">
+        <div class="why-card text-center p-4 rounded h-100">
+          <i class="fas fa-dollar-sign fa-2x mb-3"></i>
+          <h5 class="fw-bold text-gold">Affordable Packages</h5>
+          <p class="small">Budget-friendly options — from small parties to weddings.</p>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="col-12 col-sm-6 col-lg-6">
+        <div class="why-card text-center p-4 rounded h-100">
+          <i class="fas fa-user-tie fa-2x mb-3"></i>
+          <h5 class="fw-bold text-gold">Experienced Team</h5>
+          <p class="small">Years of trusted catering for events across New Jersey.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ====== Catering Packages ====== -->
+<!-- ====== Catering Packages ====== -->
+<section id="catering-packages" class="py-5" 
+         style="background-image: url('img/events-intro.png'); background-size: cover; background-position: center; position: relative;">
+  <div class="overlay-dark"></div>
+
+  <div class="container position-relative">
+    <h2 class="text-center fw-bold text-gold mb-5">Catering Packages</h2>
+
+    <div class="row g-4">
+
+      <!-- Package 1 -->
+      <div class="col-md-6 col-lg-3 d-flex">
+        <div class="package-card text-center p-4 flex-fill">
+          <h5 class="fw-bold text-gold">Classic Italian</h5>
+          <p class="price text-gold fw-bold fs-4 mb-4">$40 <span class="fs-6">per person</span></p>
+          <ul class="list-unstyled mb-4">
+            <li>2 Wood-Fired Pizzas</li>
+            <li>1 Pasta</li>
+            <li>Caesar & Garden Salad</li>
+            <li>Garlic Bread</li>
+            <li>Tiramisu & Cannoli</li>
+          </ul>
+          <a href="#form" class="btn btn-outline-gold">Book Now</a>
+        </div>
+      </div>
+
+      <!-- Package 2 -->
+      <div class="col-md-6 col-lg-3 d-flex">
+        <div class="package-card text-center p-4 flex-fill">
+          <h5 class="fw-bold text-gold">Premium Feast</h5>
+          <p class="price text-gold fw-bold fs-4 mb-4">$60 <span class="fs-6">per person</span></p>
+          <ul class="list-unstyled mb-4">
+            <li>3 Wood-Fired Pizzas</li>
+            <li>Full Pasta Buffet</li>
+            <li>Antipasto Platter</li>
+            <li>Pollo Parmigiana</li>
+            <li>Desserts</li>
+          </ul>
+          <a href="#form" class="btn btn-outline-gold">Book Now</a>
+        </div>
+      </div>
+
+      <!-- Package 3 -->
+      <div class="col-md-6 col-lg-3 d-flex">
+        <div class="package-card text-center p-4 flex-fill">
+          <h5 class="fw-bold text-gold">Ultimate Experience</h5>
+          <p class="price text-gold fw-bold fs-4 mb-4">$80 <span class="fs-6">per person</span></p>
+          <ul class="list-unstyled mb-4">
+            <li>4 Wood-Fired Pizzas</li>
+            <li>Pasta Buffet + Lasagna</li>
+            <li>Antipasto + Salads</li>
+            <li>Pollo Parmigiana & Beef</li>
+            <li>Desserts & Coffee</li>
+          </ul>
+          <a href="#form" class="btn btn-outline-gold">Book Now</a>
+        </div>
+      </div>
+
+      <!-- Package 4 -->
+      <div class="col-md-6 col-lg-3 d-flex">
+        <div class="package-card text-center p-4 flex-fill">
+          <h5 class="fw-bold text-gold">Custom Catering</h5>
+          <p class="text-gold fw-bold mb-4">Tailored to your needs</p>
+          <ul class="list-unstyled mb-4">
+            <li>Vegan / Gluten-Free Options</li>
+            <li>Fully Custom Menus</li>
+            <li>On-Site Cooking Available</li>
+            <li>Perfect for Any Occasion</li>
+            <li>Pricing Based on Selections</li>
+          </ul>
+          <a href="#form" class="btn btn-outline-gold">Book Now</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ====== Catering Request Form ====== -->
+<section id="book-event" class="py-5">
+  <div class="container">
+    <h3 class="text-center fw-bold text-gold mb-4">Catering Request Form</h3>
+    <p class="text-center text-light mb-5">
+      Please fill out the form below to request more information or to book catering for your event.
+    </p>
+    <div class="row g-4 align-items-center">
+      <!-- Image -->
+      <div class="col-lg-6">
+        <img src="img/join-our-team.png" alt="Catering Event" class="img-fluid rounded shadow">
+      </div>
+
+      <!-- Form -->
+      <div class="col-lg-6">
+        <div class="bg-black p-4 shadow rounded">
+          <form>
+
+            <!-- Full Name & Phone -->
+            <div class="row g-3 mb-3">
+              <div class="col-md-6">
+                <input type="text" class="form-control" placeholder="Full Name *" required>
+              </div>
+              <div class="col-md-6">
+                <input type="tel" class="form-control" placeholder="Phone Number *" required>
+              </div>
             </div>
-    </main>
 
-    <div id="footer-placeholder"></div>
+            <!-- Email -->
+            <div class="mb-3">
+              <input type="email" class="form-control" placeholder="Email Address *" required>
+            </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    
-    <script src="js/script.js"></script>
+            <!-- Event Date -->
+            <div class="mb-3">
+              <input type="date" class="form-control" placeholder="Event Date *" required>
+            </div>
 
-    <script src="js/load-components.js"></script>
+            <!-- Event Location -->
+            <div class="mb-3">
+              <input type="text" class="form-control" placeholder="Event Location *" required>
+            </div>
+
+            <!-- Number of Guests -->
+            <div class="mb-3">
+              <input type="number" class="form-control" placeholder="Number of Guests *" required>
+            </div>
+
+            <!-- Catering Package -->
+            <div class="mb-3">
+              <select class="form-select" required>
+                <option value="">Select Catering Package *</option>
+                <option>Classic Italian</option>
+                <option>Premium Italian Feast</option>
+                <option>Ultimate Italian Experience</option>
+                <option>Custom Catering</option>
+              </select>
+            </div>
+
+            <!-- Notes -->
+            <div class="mb-4">
+              <textarea class="form-control" rows="4" placeholder="Special Requests / Notes (Optional)"></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="d-grid">
+              <button type="submit" class="btn btn-gold">Submit Catering Request</button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- ====== FAQs Section (Modern Accordion) ====== -->
+<section id="faqs" class="py-5">
+  <div class="container">
+    <h2 class="text-center text-gold fw-bold mb-5">Frequently Asked Questions</h2>
+
+    <div class="modern-accordion">
+
+      <!-- FAQ 1 -->
+      <div class="accordion-item">
+        <input type="checkbox" id="faq1" hidden>
+        <label for="faq1" class="accordion-title">
+          <span>Do you provide catering for events outside of Rahway?</span>
+          <i class="fas fa-chevron-down"></i>
+        </label>
+        <div class="accordion-content">
+          Yes, we cater events throughout New Jersey, including with our pizza trailer for outdoor parties, weddings, and corporate events.
+        </div>
+      </div>
+
+      <!-- FAQ 2 -->
+      <div class="accordion-item">
+        <input type="checkbox" id="faq2" hidden>
+        <label for="faq2" class="accordion-title">
+          <span>Can I customize the menu for my event?</span>
+          <i class="fas fa-chevron-down"></i>
+        </label>
+        <div class="accordion-content">
+          Absolutely! We’ll tailor your menu to match your event and dietary needs including vegan and gluten-free.
+        </div>
+      </div>
+
+      <!-- FAQ 3 -->
+      <div class="accordion-item">
+        <input type="checkbox" id="faq3" hidden>
+        <label for="faq3" class="accordion-title">
+          <span>How far in advance should I book my catering?</span>
+          <i class="fas fa-chevron-down"></i>
+        </label>
+        <div class="accordion-content">
+          Ideally 2–4 weeks in advance, but we’ll do our best to accommodate last-minute requests.
+        </div>
+      </div>
+
+      <!-- FAQ 4 -->
+      <div class="accordion-item">
+        <input type="checkbox" id="faq4" hidden>
+        <label for="faq4" class="accordion-title">
+          <span>Do you offer delivery or on-site catering services?</span>
+          <i class="fas fa-chevron-down"></i>
+        </label>
+        <div class="accordion-content">
+          We offer both — from simple delivery to full on-site cooking with our mobile oven.
+        </div>
+      </div>
+
+      <!-- FAQ 5 -->
+      <div class="accordion-item">
+        <input type="checkbox" id="faq5" hidden>
+        <label for="faq5" class="accordion-title">
+          <span>Can I bring my own drinks to my catering event?</span>
+          <i class="fas fa-chevron-down"></i>
+        </label>
+        <div class="accordion-content">
+          Yes! We allow BYOB or can provide full bar service on request.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/load-components.js"></script>
+
+  <!-- Scroll Header -->
+  <script>
+    document.addEventListener('scroll', function() {
+      const header = document.getElementById('main-header');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+  <script>
+  const swiper = new Swiper('.cateringSwiper', {
+    loop: true,
+    autoplay: {
+      delay: 6000,
+      disableOnInteraction: false,
+    },
+    slidesPerView: 1,
+    spaceBetween: 20,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+      },
+      992: {
+        slidesPerView: 3,
+      }
+    }
+  });
+</script>
+
+
+
 </body>
 </html>

@@ -62,71 +62,95 @@
 
 
 /* Info Section */
+/* Sección Info */
 .info-section {
-    background-color: #f1f1f1;
+  background-color: #bf9861;
 }
 
-.info-section .container-fluid {
-    padding: 0;
+.row.gx-0 {
+  margin: 0;
 }
 
-.info-section .row {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-}
-
-.info-section .col-md-3 {
-    padding: 0;
-    text-align: center;
-}
-
-.info-section i {
-    font-size: 2rem;
-}
-
-/* Info Box Styling */
 .info-box {
-    padding: 30px;
-    border-radius: 0;
-    margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  height: 100%;
+  text-align: left;
+  gap: 15px;
 }
 
-.info-box h4 {
-    margin-top: 10px;
-    font-size: 1.5rem;
+.info-box.bg-dark {
+  background-color: #1a1a1a !important;
 }
 
-.info-box p {
-    color: #555;
+.big-icon {
+  font-size: 1.4rem;
+  color: #bf9861;
+  flex-shrink: 0;
 }
 
-/* Specific color styling for the first 3 columns */
-.bg-dark {
-    background-color: #000 !important;
+.info-text h4 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
 }
 
-.bg-warning {
-    background-color: #bf9861 !important;
-    color: #000;
+.info-text p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #ccc;
 }
 
-/* Centrar los íconos de redes sociales */
+/* Caja social */
+.social-box {
+  justify-content: center;
+  background-color: #bf9861;
+}
+
 .social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  width: 100%;
 }
 
 .social-icons i {
-    color: white;
-    transition: color 0.3s ease;
+  font-size: 2.2rem;
+  color: #1a1a1a;
 }
 
-.social-icons i:hover {
-    color: #02332d; /* Cambio de color al pasar el ratón */
+/* Responsive */
+@media (max-width: 767px) {
+  .info-box {
+    flex-direction: row;
+    justify-content: flex-start;
+    text-align: left;
+    padding: 20px 15px;
+  }
+
+  .social-box {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+    gap: 30px;
+  }
 }
+
+
+
+
+
+
+
+
+
+
 
 
 /* Hero Section */
@@ -313,6 +337,17 @@
   }
 }
 
+/* Ajustar la imagen de fondo en versión móvil */
+@media (max-width: 576px) {
+  .pizza-image {
+    min-height: 300px; /* Ajustar altura */
+    background-position: center center; /* Centrado */
+  }
+  .pizza-welcome-section .text-side {
+    padding: 0 15px; /* Ajuste en el padding */
+  }
+}
+
 .text-side {
   overflow: hidden;
 }
@@ -328,9 +363,10 @@
 .text-side .text-overlay {
   position: absolute;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.6);
+  background: linear-gradient(to right, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0) 100%);
   z-index: 1;
 }
+
 
 
 /* estilo boton */
@@ -808,7 +844,7 @@
 .promo-banner-slider .promo-overlay {
   position: absolute;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.55); /* oscurecer fondo */
+  background-color: rgba(27, 27, 27, 0.55); /* oscurecer fondo */
   z-index: 1;
 }
 
@@ -866,6 +902,94 @@
 
 
 
+
+
+
+/* Hero de promoción */
+/* Hero con imagen de fondo */
+.promo-hero {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 100px 0;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* Gradiente oscuro desde la izquierda */
+.promo-overlay {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 40%, rgba(0,0,0,0) 100%);
+  z-index: 0;
+}
+
+
+/* Texto sobre el overlay */
+.promo-hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Botón dorado */
+.btn-gold {
+  background-color: #bf9861;
+  color: #1a1a1a;
+  font-weight: bold;
+  padding: 10px 25px;
+  border-radius: 8px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+.btn-gold:hover {
+  background-color: #b0844f;
+  color: #fff;
+}
+/* Ajustes de texto para la sección promo-hero */
+.promo-hero h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.promo-hero p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #f5f5f5;
+  margin-bottom: 1rem;
+}
+
+/* Responsive para móvil */
+@media (max-width: 768px) {
+  .promo-hero {
+    padding: 60px 0;
+  }
+
+  .promo-overlay {
+    background: rgba(0, 0, 0, 0.7); /* oscuro completo en mobile */
+  }
+
+  .promo-hero h2 {
+    font-size: 1.5rem;
+  }
+
+  .promo-hero p {
+    font-size: 0.95rem;
+  }
+
+  .promo-hero .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+
+
 </style>
 <body>
 
@@ -887,8 +1011,6 @@
   });
 </script>
 
-
-
     <!-- hero principal -->
 <div id="header-placeholder"></div>
 <!-- Hero Section -->
@@ -909,35 +1031,53 @@
 </section>
 
 
+  
   <!-- Information Section -->
-  <section class="info-section">
-    <div class="container-fluid p-0">
-      <div class="row text-center no-gutters">
-        <div class="col-md-3 info-box bg-dark text-white">
-          <p><i class="bi bi-telephone-fill"></i></p>
+<section class="info-section">
+  <div class="container-fluid p-0">
+    <div class="row gx-0 text-center">
+
+      <!-- Teléfono -->
+      <div class="col-md-3 info-box bg-dark text-white">
+        <i class="bi bi-telephone-fill big-icon"></i>
+        <div class="info-text">
           <h4>(732) 382-6600</h4>
           <p>A small river named Duden flows</p>
         </div>
-        <div class="col-md-3 info-box bg-dark text-white">
-          <p><i class="bi bi-geo-alt-fill"></i></p>
+      </div>
+
+      <!-- Dirección -->
+      <div class="col-md-3 info-box bg-dark text-white">
+        <i class="bi bi-geo-alt-fill big-icon"></i>
+        <div class="info-text">
           <h4>1464 Main St, Rahway, NJ</h4>
           <p>Suite 721 New York NY 10016</p>
         </div>
-        <div class="col-md-3 info-box bg-dark text-white">
-          <p><i class="bi bi-clock"></i></p>
+      </div>
+
+      <!-- Horario -->
+      <div class="col-md-3 info-box bg-dark text-white">
+        <i class="bi bi-clock big-icon"></i>
+        <div class="info-text">
           <h4>Open Monday-Friday</h4>
           <p>8:00am - 9:00pm</p>
         </div>
-        <div class="col-md-3 info-box bg-warning text-dark d-flex justify-content-center align-items-center">
-          <div class="social-icons">
-            <i class="bi bi-twitter"></i>
-            <i class="bi bi-facebook"></i>
-            <i class="bi bi-instagram"></i>
-          </div>
+      </div>
+
+      <!-- Redes sociales -->
+      <div class="col-md-3 info-box social-box">
+        <div class="social-icons">
+          <i class="bi bi-tiktok"></i>
+          <i class="bi bi-facebook"></i>
+          <i class="bi bi-instagram"></i>
         </div>
       </div>
+
     </div>
-  </section>
+  </div>
+</section>
+
+
 
 
   <!-- seccion restaurante vista -->
@@ -951,8 +1091,9 @@
     <div class="row">
       <div class="col-lg-6">
         <div class="promo-text p-4">
-          <h2 class="fw-bold mb-3">Made fresh to order, <br> presented in elegance.</h2>
-          <p class="mb-4">Il Forno puts a luxurious twist on classic Italian flavors using only the finest ingredients in every dish we prepare for you.</p>
+          <h2 class="fw-bold mb-3">Authentic Neapolitan Style <br> Casual Elegant Dining.</h2>
+          <p class="mb-4">Enjoy a relaxed yet refined dining experience with our brick‑oven Neapolitan pizza and Italian classics like Chicken Parm, Spaghetti & Meatballs, and more.
+.</p>
           <a href="#reservation" class="btn btn-gold fw-bold">Book a Table</a>
         </div>
       </div>
@@ -971,7 +1112,7 @@
   <div class="container">
     <!-- Título -->
     <div class="text-center mb-5">
-      <h2 class="fw-bold text-dark">Restaurant Services</h2>
+      <h2 class="fw-bold text-dark">Our Services</h2>
       <p class="text-green">We do more than serve pizza. Explore our full list of services designed for all occasions.</p>
     </div>
 
@@ -993,7 +1134,7 @@
 
   <!-- Fila 2 -->
   <li class="nav-item d-inline-block" role="presentation">
-    <button class="nav-link" id="truck-tab" data-bs-toggle="tab" data-bs-target="#truck" type="button" role="tab">Truck Party</button>
+    <button class="nav-link" id="truck-tab" data-bs-toggle="tab" data-bs-target="#truck" type="button" role="tab">Pizza Truck</button>
   </li>
   <li class="nav-item d-inline-block" role="presentation">
     <button class="nav-link" id="private-tab" data-bs-toggle="tab" data-bs-target="#private" type="button" role="tab">Private Events</button>
@@ -1051,7 +1192,7 @@
             <img src="img/truck-party.png" class="img-fluid rounded-start w-100" alt="Truck Party">
           </div>
           <div class="col-lg-6 p-4">
-            <h3 class="text-light fw-bold">Truck Party Service</h3>
+            <h3 class="text-light fw-bold">Pizza Truck Service</h3>
             <p class="text-light">Elevate your event with our mobile pizza oven truck! Perfect for birthdays, festivals, and private parties serving hot, wood-fired pizzas on the spot.
 </p>
             <a href="#" class="btn-service">Book a Service</a>
@@ -1067,7 +1208,7 @@
           <div class="col-lg-6 p-4">
             <h3 class="text-light fw-bold">Private Events</h3>
             <p class="text-light">Celebrate your special moments with us. Our space is available for birthdays, corporate gatherings, and family celebrations. We’ll help you plan the perfect Italian-inspired event.</p>
-            <a href="#" class="btn-service">Book a Service</a>
+            <a href="#" class="btn-service">Book View</a>
           </div>
         </div>
       </div>
@@ -1093,13 +1234,14 @@
         <div class="d-flex align-items-center h-100 text-white px-5 py-5 position-relative" style="z-index: 2;">
           <div>
             <h2 class="fw-bold mb-4">
-              Wood-fired <span class="text-warning">PIZZA</span> A <br>
-              pizza and traditional Italian dishes in Rahway, NJ
+              Wood-fired <span class="text-warning">PIZZA</span> & <br>
+              Traditional Italian Dishes in Rahway, NJ
             </h2>
             <p class="text-light">
-              At Il Forno a Legna, we serve wood-fired pizzas, handcrafted pastas, and traditional Italian dishes in a warm, family-style setting. Come dine with us, order online, or book your next catering event.
+              At Il Forno a Legna, we serve artisan wood‑fired pizzas, handcrafted pastas, and timeless Italian favorites in a warm, inviting setting. Join us for an elegant yet relaxed dining experience, order online, or let us host your next special event.
+
             </p>
-            <a href="#" class="btn-menu mt-4">View Full Menu</a>
+            <a href="#" class="btn-menu mt-4">View Menu</a>
           </div>
         </div>
       </div>
@@ -1109,29 +1251,25 @@
 
 
 
+<!-- ====== Promo Section (Full Width Hero with Dark Overlay Left) ====== -->
+<section class="promo-hero text-white d-flex align-items-center" style="background-image: url('img/events-intro.png');">
+  <div class="promo-overlay"></div> <!-- Gradiente lateral izquierdo -->
 
-<!-- seccion para ordenar -->
- <section class="order-section py-5">
-  <div class="container text-center">
-    <h2 class="text-white fw-bold mb-3">Order Online or Reserve a Table</h2>
-    <p class="text-light mb-5">
-      Quick and easy ordering, right at your fingertips. Enjoy our food from the comfort of your home or secure your table ahead of time.
-    </p>
-
-    <div class="row justify-content-center gx-4 gy-3">
-      <div class="col-md-5">
-        <a href="#" class="card-option card-order">
-          <span>Order Online</span>
-        </a>
-      </div>
-      <div class="col-md-5">
-        <a href="#" class="card-option card-reserve">
-          <span>Reserve Now</span>
-        </a>
+  <div class="container position-relative">
+    <div class="row">
+      <div class="col-lg-6 col-md-8">
+        <h2 class="fw-bold display-5">Voted Best Chicken Parm in the City</h2>
+        <p class="lead mt-3">
+          Come see why everyone’s talking about it. Our signature Chicken Parm is made with tender, breaded chicken cutlets, house‑made marinara, and layers of melted mozzarella, baked to perfection. It’s an award‑winning favorite that’s become a local legend.
+        </p>
+        <p class="lead met-3">Visit us and taste the best Chicken Parm you’ve ever had.</p>
+        <a href="#reservation" class="btn btn-gold mt-4">View Full Menu</a>
       </div>
     </div>
   </div>
 </section>
+
+
 
 
 <!-- seccion pizza napolitana -->
@@ -1141,16 +1279,16 @@
       
       <!-- Imagen grande a la izquierda -->
       <div class="col-lg-6">
-       <img src="img/pizza-napolitana.png" alt="Pizza Napolitana" class="img-fluid w-100 h-100 object-fit-cover full-mobile-img">
+       <img src="img/napo.png" alt="Pizza Napolitana" class="img-fluid w-100 h-100 object-fit-cover full-mobile-img">
 
       </div>
 
       <!-- Contenido a la derecha -->
-      <div class="col-lg-6 p-5 text-white bg-dark">
+      <div class="col-lg-6 p-5 text-white">
         <p class="text-uppercase small letter-spacing text-gold mb-2">House Specialty</p>
-        <h2 class="display-5 fw-bold mb-3">Pizza Napolitana Il Forno</h2>
+        <h2 class="display-6 fw-bold mb-3">Authentic Neapolitan, Wood‑Fired to Perfection</h2>
         <p class="fs-6">
-          Our Neapolitan pizza is an ode to tradition: thin and fluffy dough, San Marzano tomato sauce, fresh mozzarella, and a touch of basil, all baked in our wood-fired oven.
+          Our Neapolitan pizza is where tradition meets flavor. Crafted with thin, airy dough, San Marzano tomato sauce, creamy fresh mozzarella, and fragrant basil, each pie is baked to perfection in our wood‑fired oven.
         </p>
       </div>
 
@@ -1235,7 +1373,7 @@
 <!-- seccion blog -->
  <section class="blog-section py-5">
   <div class="container">
-    <h2 class="text-center fw-bold text-dark mb-5">Ilforno News</h2>
+    <h2 class="text-center fw-bold text-dark mb-5">Il Forno a La Legna – Fresh News & Happenings</h2>
     
     <div class="row g-4">
       <!-- Blog Card 1 -->
