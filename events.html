@@ -185,6 +185,14 @@
   color: #1a1a1a;
 }
 
+#event-packages .package-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+
 /* Responsivo */
 @media (max-width: 991px) {
   .package-card {
@@ -384,61 +392,85 @@
   <div class="overlay"></div>
   <div class="container position-relative">
     <h2 class="text-center fw-bold text-gold mb-5">Event Packages</h2>
-    
+
     <div class="row g-4">
 
       <!-- Package 1 -->
       <div class="col-md-4 d-flex">
-        <div class="package-card text-center p-4 flex-fill">
-          <h5 class="fw-bold text-gold">Classic Italian Experience</h5>
-          <p class="price text-gold fw-bold fs-4 mb-4">$45 <span class="fs-6">per person</span></p>
-          <ul class="list-unstyled mb-4">
-            <li>2 Wood-Fired Pizzas per person</li>
-            <li>Family-Style Pasta</li>
-            <li>Garden Salad</li>
-            <li>Garlic Bread</li>
-            <li>Dessert Platter</li>
+        <div class="package-card text-center p-4 d-flex flex-column">
+          <h5 class="fw-bold text-gold">Option #1</h5>
+          <p class="price text-gold fw-bold fs-4 mb-4">$38 <span class="fs-6">per person</span></p>
+          
+          <ul class="list-unstyled mb-4 text-start mx-auto" style="max-width: 300px;">
+            <li><strong>Appetizer:</strong> Rollatini or Meatballs<br><em>Shared, family style</em></li>
+            <li class="mt-2"><strong>Salad:</strong> House or Caesar<br><em>Single serving</em></li>
+            <li class="mt-2"><strong>Pasta:</strong> Vodka or Bolognese<br><em>Single serving</em></li>
+            <li class="mt-2"><strong>Entrée:</strong> Piccata, Marsala, or Scarpariello<br><em>Single serving</em></li>
+            <li class="mt-2">Includes soft drinks</li>
           </ul>
-          <a href="#booking-form" class="btn btn-outline-gold">Book Now</a>
+
+          <div class="text-gold small mb-3">
+            <p class="mb-1">Sun–Thu: 30 guest minimum</p>
+            <p class="mb-1">Fri–Sat: 40 guest minimum</p>
+            <p class="mb-1">No room rental fees</p>
+          </div>
+
+          <a href="menu.pdf" class="btn btn-outline-gold mt-auto">Download Menu</a>
         </div>
       </div>
 
       <!-- Package 2 -->
       <div class="col-md-4 d-flex">
-        <div class="package-card highlight text-center p-4 flex-fill">
-          <span class="badge-popular">Most Popular</span>
-          <h5 class="fw-bold text-gold">Premium Italian Feast</h5>
-          <p class="price text-gold fw-bold fs-4 mb-4">$65 <span class="fs-6">per person</span></p>
-          <ul class="list-unstyled mb-4">
-            <li>3 Wood-Fired Pizzas per person</li>
-            <li>2 Pasta Options</li>
-            <li>Antipasto Platter</li>
-            <li>Roasted Chicken or Pollo Parmigiana</li>
-            <li>Salads & Dessert Platter</li>
+        <div class="package-card highlight text-center p-4 d-flex flex-column">
+          <h5 class="fw-bold text-gold">Option #2</h5>
+          <p class="price text-gold fw-bold fs-4 mb-4">$45 <span class="fs-6">per person</span></p>
+          
+          <ul class="list-unstyled mb-4 text-start mx-auto" style="max-width: 300px;">
+            <li><strong>Appetizer:</strong> Caprese, Calamari, or Rollatini<br><em>Shared, family style</em></li>
+            <li class="mt-2"><strong>Salad:</strong> Caesar or Greek<br><em>Single serving</em></li>
+            <li class="mt-2"><strong>Pasta:</strong> Vodka or Bolognese<br><em>Single serving</em></li>
+            <li class="mt-2"><strong>Entrée:</strong> Francese, Marsala, Scarpariello, or Parmigiana<br><em>Single serving</em></li>
+            <li class="mt-2">Includes soft drinks</li>
           </ul>
-          <a href="#booking-form" class="btn btn-outline-gold">Book Now</a>
+
+          <div class="text-gold small mb-3">
+            <p class="mb-1">Sun–Thu: 30 guest minimum</p>
+            <p class="mb-1">Fri–Sat: 40 guest minimum</p>
+            <p class="mb-1">No room rental fees</p>
+          </div>
+
+          <a href="menu.pdf" class="btn btn-outline-gold mt-auto">Download Menu</a>
         </div>
       </div>
 
       <!-- Package 3 -->
       <div class="col-md-4 d-flex">
-        <div class="package-card text-center p-4 flex-fill">
-          <h5 class="fw-bold text-gold">Ultimate Italian Celebration</h5>
-          <p class="price text-gold fw-bold fs-4 mb-4">$85 <span class="fs-6">per person</span></p>
-          <ul class="list-unstyled mb-4">
-            <li>4 Wood-Fired Pizzas per person</li>
-            <li>Full Pasta Buffet</li>
-            <li>Antipasto Platter & Mixed Greens</li>
-            <li>Pollo Parmigiana, Chicken Francese, Roast Beef</li>
-            <li>Dessert Platter</li>
+        <div class="package-card text-center p-4 d-flex flex-column">
+          <h5 class="fw-bold text-gold">Option #3</h5>
+          <p class="price text-gold fw-bold fs-4 mb-4">$54 <span class="fs-6">per person</span></p>
+          
+          <ul class="list-unstyled mb-4 text-start mx-auto" style="max-width: 300px;">
+            <li><strong>Appetizer:</strong> Rollatini, Meatballs, or Shrimp<br><em>Shared, family style</em></li>
+            <li class="mt-2"><strong>Salad:</strong> Forno or Arugula<br><em>Single serving</em></li>
+            <li class="mt-2"><strong>Pasta:</strong> Vodka or Bolognese<br><em>Single serving</em></li>
+            <li class="mt-2"><strong>Entrée:</strong> Martini, Veal, Seafood, or Salmon<br><em>Single serving</em></li>
+            <li class="mt-2">Includes soft drinks</li>
           </ul>
-          <a href="#booking-form" class="btn btn-outline-gold">Book Now</a>
+
+          <div class="text-gold small mb-3">
+            <p class="mb-1">Sun–Thu: 30 guest minimum</p>
+            <p class="mb-1">Fri–Sat: 40 guest minimum</p>
+            <p class="mb-1">No room rental fees</p>
+          </div>
+
+          <a href="menu.pdf" class="btn btn-outline-gold mt-auto">Download Menu</a>
         </div>
       </div>
 
     </div>
   </div>
 </section>
+
 
 
 
