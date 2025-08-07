@@ -1,788 +1,917 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Our Menu</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
-  <link rel="stylesheet" href="css/style.css"/>
-  <script src="https://kit.fontawesome.com/YOUR_KIT_CODE.js" crossorigin="anonymous"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Menu</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/YOUR_KIT_CODE.js"
+      crossorigin="anonymous"
+    ></script>
 
-  <style>
-   /* Header transparente por defecto */
-#main-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1030;
-  background-color: transparent !important;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  padding: 15px 0;
-}
-
-/* Al hacer scroll: overlay oscuro uniforme */
-#main-header.scrolled {
-  background-color: rgba(0, 0, 0, 0.55) !important;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-}
-
-
-    /* HERO MENU ESTILO */
-    .hero-menu-section {
-      position: relative;
-      color: white;
-      background-size: cover;
-      background-position: center center;
-      background-repeat: no-repeat;
-      height: 60vh; /* un poco más alto que 50vh */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
-
-    /* Overlay oscuro uniforme */
-    .hero-menu-section .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0, 0, 0, 0.55);
-      z-index: 1;
-    }
-
-    /* Contenido sobre overlay */
-    .hero-menu-section .container {
-      position: relative;
-      z-index: 2;
-    }
-
-   
-
-    @media (max-width: 768px) {
-      .hero-menu-section {
-        height: 70vh; /* más alto en mobile para que no quede pegado */
+    <style>
+      /* Header transparente por defecto */
+      #main-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1030;
+        background-color: transparent !important;
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        padding: 15px 0;
       }
-    }
-
-
-
-/* SECCION MAIN MENU */
-#main-menu {
-  background-color: #1a1a1a;
-}
-
-.menu-card {
-  border: 2px solid rgba(191, 152, 97, 0.5);
-  border-radius: 8px;
-  overflow: hidden;
-  transition: transform 0.3s ease;
-}
-
-.menu-card:hover {
-  transform: translateY(-5px); /* Mantiene leve movimiento sin luz */
-}
-
-.menu-img {
-  position: relative;
-  height: 250px;
-  overflow: hidden;
-}
-
-.menu-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.menu-card:hover .menu-img img {
-  transform: scale(1.05); /* Solo zoom, sin luminosidad */
-}
-
-.menu-img .overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.4);
-}
-
-.category-title {
-  position: absolute;
-  bottom: 15px;
-  left: 15px;
-  font-size: 1.6rem;
-  font-weight: bold;
-  color: #dacfbd;
-}
-
-
-
-.menu-items {
-  padding: 15px;
-}
-
-.menu-item {
-  display: flex;
-  justify-content: space-between;
-  padding: 8px 0;
-  border-bottom: 1px solid rgba(191, 152, 97, 0.2);
-}
-
-.menu-item:last-child {
-  border-bottom: none;
-}
-
-.price {
-  color: #bf9861;
-  font-weight: bold;
-}
-
-
-
-
-/* ===== Menu catering ===== */
-/* ===== Menu catering elegante ===== */
-#catering-menu {
-  background-color: #dacfbd; /* Fondo de la sección */
-  padding-top: 60px;
-  padding-bottom: 60px;
-}
-
-#catering-menu .card {
-  background-color: #dacfbd; /* Fondo de las cards */
-  border-radius: 8px;
-  overflow: hidden;
-  border: 1px solid rgba(191, 152, 97, 0.3); /* Borde dorado suave */
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-#catering-menu .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-}
-
-#catering-menu .card-title {
-  font-size: 1.2rem;
-  color: #bf9861; /* Color de títulos */
-  border-bottom: 2px solid #bf9861;
-  display: inline-block;
-  padding-bottom: 5px;
-  margin-bottom: 15px;
-}
-
-#catering-menu ul li {
-  padding: 6px 0;
-  font-size: 0.95rem;
-  color: #1a1a1a; /* Color del texto de la información */
-  display: flex;
-  justify-content: space-between;
-}
-
-#catering-menu ul li span {
-  color: #bf9861; /* Color de los precios */
-  font-weight: bold;
-}
-
-#catering-menu img {
-  height: 180px;
-  object-fit: cover;
-  transition: transform 0.4s ease;
-}
-
-#catering-menu .card:hover img {
-  transform: scale(1.05);
-}
-
-
-/* Botón dorado */
-/* Botón dorado */
-.btn-gold {
-  background-color: #bf9861;
-  color: #1a1a1a;
-  font-weight: bold;
-  padding: 10px 25px;
-  border: 2px solid #bf9861; /* Borde visible siempre */
-  border-radius: 8px;
-  text-transform: uppercase;
-  transition: all 0.3s ease;
-}
-
-.btn-gold:hover {
-  background-color: transparent; /* Fondo transparente en hover */
-  color: #bf9861; /* Texto dorado */
-  border-color: #bf9861; /* Mantener borde dorado */
-}
-
-/* Botón contorno dorado */
-.btn-outline-gold {
-  background-color: transparent;
-  color: #bf9861;
-  border: 2px solid #bf9861;
-  font-weight: bold;
-  padding: 10px 25px;
-  border-radius: 8px;
-  text-transform: uppercase;
-  transition: all 0.3s ease;
-}
-
-.btn-outline-gold:hover {
-  background-color: #bf9861;
-  color: #1a1a1a;
-  border-color: #bf9861;
-}
-
-
-
-
-/* ====== Event Packages ====== */
-/* Overlay oscuro */
-#event-packages .overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.6);
-}
-
-/* Color título */
-.text-gold {
-  color: #bf9861;
-}
-
-/* Cards uniformes */
-.package-card {
-  background-color: rgba(17, 17, 17, 0.95);
-  border: 2px solid #bf9861;
-  border-radius: 8px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.package-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 20px rgba(191, 152, 97, 0.4);
-}
-
-/* Lista */
-.package-card ul li {
-  color: #dacfbd;
-  font-size: 0.95rem;
-  padding: 4px 0;
-}
-
-/* Badge */
-.badge-popular {
-  background-color: #bf9861;
-  color: #1a1a1a;
-  font-weight: bold;
-  padding: 5px 10px;
-  border-radius: 20px;
-  display: inline-block;
-  margin-bottom: 10px;
-}
-
-/* Botón */
-.btn-outline-gold {
-  background-color: transparent;
-  color: #bf9861;
-  border: 2px solid #bf9861;
-  font-weight: bold;
-  padding: 8px 20px;
-  border-radius: 8px;
-  text-transform: uppercase;
-  font-size: 0.85rem;
-  transition: all 0.3s ease;
-}
-.btn-outline-gold:hover {
-  background-color: #bf9861;
-  color: #1a1a1a;
-}
-
-/* Responsivo */
-@media (max-width: 991px) {
-  .package-card {
-    height: auto;
-  }
-}
-
-
-
-/* Seccion populares */
-/* Fondo de toda la sección */
-#customer-favorites {
-  background-color: #1a1a1a;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-
-/* Ajuste del título de la sección */
-#customer-favorites h2 {
-  margin-top: 0.5rem; /* sube el título */
-  margin-bottom: 2rem; /* más espacio hacia abajo */
-  text-align: center; /* centrado horizontal */
-}
-
-/* Imagen izquierda */
-.favorites-left-img img {
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Fondo parte derecha */
-.favorites-right {
-  background-color: #111111;
-}
-
-/* Card de cada ítem */
-.favorite-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  height: 260px; /* altura fija */
-  text-align: center;
-}
-
-/* Imagen circular */
-.favorite-img {
-  width: 160px;
-  height: 160px;
-  margin-bottom: 10px;
-  overflow: hidden;
-  border-radius: 50%;
-  border: 1px solid #bf9861;
-}
-
-.favorite-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Título */
-.favorite-title {
-  min-height: 40px; /* espacio reservado para títulos largos/cortos */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #bf9861;
-  font-weight: bold;
-  text-align: center;
-}
-
-/* Botón contorno dorado */
-.btn-outline-gold {
-  background-color: transparent;
-  color: #bf9861;
-  border: 2px solid #bf9861;
-  font-weight: bold;
-  padding: 6px 15px;
-  border-radius: 8px;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  transition: all 0.3s ease;
-}
-
-.btn-outline-gold:hover {
-  background-color: #bf9861;
-  color: #1a1a1a;
-}
-
-/* Texto dorado */
-.text-gold {
-  color: #bf9861;
-}
-
-/* ✅ Ajuste solo para escritorio para igualar altura columnas */
-@media (min-width: 1200px) {
-  #customer-favorites .row {
-    display: flex;
-    align-items: stretch;
-  }
-  .favorites-left-img,
-  .favorites-right {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  .favorites-left-img img {
-    height: 100%;
-    object-fit: cover;
-  }
-}
-
-/* Ajustes responsive */
-@media (max-width: 991px) {
-  .favorites-left-img {
-    display: block; /* ✅ Asegura que la imagen aparezca */
-    width: 100%;
-    margin-bottom: 1rem;
-  }
-
-  .favorites-left-img img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-  }
-
-  .favorites-right {
-    padding: 2rem 1rem;
-    text-align: center;
-  }
-}
-
-
-@media (max-width: 576px) {
-  .favorite-img {
-    width: 140px;
-    height: 140px;
-  }
-  .favorite-card {
-    height: auto; /* en móvil dejamos que crezca */
-  }
-}
-
-
-
-  </style>
-</head>
-
-<body>
-
-  <!-- Header (cargado dinámicamente) -->
-  <div id="header-placeholder"></div>
-
-  <!-- Hero Section -->
-  <section class="hero-menu-section" style="background-image: url('img/our-menu.png');">
-    <div class="overlay"></div>
-    <div class="container">
-      <h1 class="display-4 fw-bold">Our Menu</h1>
-      <p class="lead">Experience the finest wood-fired pizzas, handcrafted pastas, and authentic Italian flavors.</p>
-    </div>
-  </section>
-
-
-
-<!-- Customer Favorites Section -->
-<section id="customer-favorites" class="">
-  <div class="container-fluid p-0">
-    <div class="row g-0">
-
-      <!-- Imagen izquierda -->
-      <div class="col-lg-5 favorites-left-img">
-        <img src="img/popular.png" alt="Restaurant Interior" class="img-fluid w-100 h-100">
+
+      /* Al hacer scroll: overlay oscuro uniforme */
+      #main-header.scrolled {
+        background-color: rgba(0, 0, 0, 0.55) !important;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      }
+
+      /* HERO MENU ESTILO */
+      .hero-menu-section {
+        position: relative;
+        color: white;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        height: 60vh; /* un poco más alto que 50vh */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+
+      /* Overlay oscuro uniforme */
+      .hero-menu-section .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.55);
+        z-index: 1;
+      }
+
+      /* Contenido sobre overlay */
+      .hero-menu-section .container {
+        position: relative;
+        z-index: 2;
+      }
+
+      @media (max-width: 768px) {
+        .hero-menu-section {
+          height: 70vh; /* más alto en mobile para que no quede pegado */
+        }
+      }
+
+      /* SECCION MAIN MENU */
+      #main-menu {
+        background-color: #1a1a1a;
+      }
+
+      .menu-card {
+        border: 2px solid rgba(191, 152, 97, 0.5);
+        border-radius: 8px;
+        overflow: hidden;
+        transition: transform 0.3s ease;
+      }
+
+      .menu-card:hover {
+        transform: translateY(-5px); /* Mantiene leve movimiento sin luz */
+      }
+
+      .menu-img {
+        position: relative;
+        height: 250px;
+        overflow: hidden;
+      }
+
+      .menu-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+
+      .menu-card:hover .menu-img img {
+        transform: scale(1.05); /* Solo zoom, sin luminosidad */
+      }
+
+      .menu-img .overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.4);
+      }
+
+      .category-title {
+        position: absolute;
+        bottom: 15px;
+        left: 15px;
+        font-size: 1.6rem;
+        font-weight: bold;
+        color: #dacfbd;
+      }
+
+      .menu-items {
+        padding: 15px;
+      }
+
+      .menu-item {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px 0;
+        border-bottom: 1px solid rgba(191, 152, 97, 0.2);
+      }
+
+      .menu-item:last-child {
+        border-bottom: none;
+      }
+
+      .price {
+        color: #bf9861;
+        font-weight: bold;
+      }
+
+      /* ===== Menu catering ===== */
+      /* ===== Menu catering elegante ===== */
+      #catering-menu {
+        background-color: #dacfbd; /* Fondo de la sección */
+        padding-top: 60px;
+        padding-bottom: 60px;
+      }
+
+      #catering-menu .card {
+        background-color: #dacfbd; /* Fondo de las cards */
+        border-radius: 8px;
+        overflow: hidden;
+        border: 1px solid rgba(191, 152, 97, 0.3); /* Borde dorado suave */
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      #catering-menu .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+      }
+
+      #catering-menu .card-title {
+        font-size: 1.2rem;
+        color: #bf9861; /* Color de títulos */
+        border-bottom: 2px solid #bf9861;
+        display: inline-block;
+        padding-bottom: 5px;
+        margin-bottom: 15px;
+      }
+
+      #catering-menu ul li {
+        padding: 6px 0;
+        font-size: 0.95rem;
+        color: #1a1a1a; /* Color del texto de la información */
+        display: flex;
+        justify-content: space-between;
+      }
+
+      #catering-menu ul li span {
+        color: #bf9861; /* Color de los precios */
+        font-weight: bold;
+      }
+
+      #catering-menu img {
+        height: 180px;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+      }
+
+      #catering-menu .card:hover img {
+        transform: scale(1.05);
+      }
+
+      /* Botón dorado */
+      /* Botón dorado */
+      .btn-gold {
+        background-color: #bf9861;
+        color: #1a1a1a;
+        font-weight: bold;
+        padding: 10px 25px;
+        border: 2px solid #bf9861; /* Borde visible siempre */
+        border-radius: 8px;
+        text-transform: uppercase;
+        transition: all 0.3s ease;
+      }
+
+      .btn-gold:hover {
+        background-color: transparent; /* Fondo transparente en hover */
+        color: #bf9861; /* Texto dorado */
+        border-color: #bf9861; /* Mantener borde dorado */
+      }
+
+      /* Botón contorno dorado */
+      .btn-outline-gold {
+        background-color: transparent;
+        color: #bf9861;
+        border: 2px solid #bf9861;
+        font-weight: bold;
+        padding: 10px 25px;
+        border-radius: 8px;
+        text-transform: uppercase;
+        transition: all 0.3s ease;
+      }
+
+      .btn-outline-gold:hover {
+        background-color: #bf9861;
+        color: #1a1a1a;
+        border-color: #bf9861;
+      }
+
+      /* ====== Event Packages ====== */
+      /* Overlay oscuro */
+      #event-packages .overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.6);
+      }
+
+      /* Color título */
+      .text-gold {
+        color: #bf9861;
+      }
+
+      /* Cards uniformes */
+      .package-card {
+        background-color: rgba(17, 17, 17, 0.95);
+        border: 2px solid #bf9861;
+        border-radius: 8px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .package-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 0 20px rgba(191, 152, 97, 0.4);
+      }
+
+      /* Lista */
+      .package-card ul li {
+        color: #dacfbd;
+        font-size: 0.95rem;
+        padding: 4px 0;
+      }
+
+      /* Badge */
+      .badge-popular {
+        background-color: #bf9861;
+        color: #1a1a1a;
+        font-weight: bold;
+        padding: 5px 10px;
+        border-radius: 20px;
+        display: inline-block;
+        margin-bottom: 10px;
+      }
+
+      /* Botón */
+      .btn-outline-gold {
+        background-color: transparent;
+        color: #bf9861;
+        border: 2px solid #bf9861;
+        font-weight: bold;
+        padding: 8px 20px;
+        border-radius: 8px;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        transition: all 0.3s ease;
+      }
+      .btn-outline-gold:hover {
+        background-color: #bf9861;
+        color: #1a1a1a;
+      }
+
+      /* Responsivo */
+      @media (max-width: 991px) {
+        .package-card {
+          height: auto;
+        }
+      }
+
+      /* Seccion populares */
+      /* Fondo de toda la sección */
+      #customer-favorites {
+        background-color: #1a1a1a;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+      }
+
+      /* Ajuste del título de la sección */
+      #customer-favorites h2 {
+        margin-top: 0.5rem; /* sube el título */
+        margin-bottom: 2rem; /* más espacio hacia abajo */
+        text-align: center; /* centrado horizontal */
+      }
+
+      /* Imagen izquierda */
+      .favorites-left-img img {
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* Fondo parte derecha */
+      .favorites-right {
+        background-color: #111111;
+      }
+
+      /* Card de cada ítem */
+      .favorite-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        height: 260px; /* altura fija */
+        text-align: center;
+      }
+
+      /* Imagen circular */
+      .favorite-img {
+        width: 160px;
+        height: 160px;
+        margin-bottom: 10px;
+        overflow: hidden;
+        border-radius: 50%;
+        border: 1px solid #bf9861;
+      }
+
+      .favorite-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* Título */
+      .favorite-title {
+        min-height: 40px; /* espacio reservado para títulos largos/cortos */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #bf9861;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      /* Botón contorno dorado */
+      .btn-outline-gold {
+        background-color: transparent;
+        color: #bf9861;
+        border: 2px solid #bf9861;
+        font-weight: bold;
+        padding: 6px 15px;
+        border-radius: 8px;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        transition: all 0.3s ease;
+      }
+
+      .btn-outline-gold:hover {
+        background-color: #bf9861;
+        color: #1a1a1a;
+      }
+
+      /* Texto dorado */
+      .text-gold {
+        color: #bf9861;
+      }
+
+      /* ✅ Ajuste solo para escritorio para igualar altura columnas */
+      @media (min-width: 1200px) {
+        #customer-favorites .row {
+          display: flex;
+          align-items: stretch;
+        }
+        .favorites-left-img,
+        .favorites-right {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+        .favorites-left-img img {
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      /* Ajustes responsive */
+      @media (max-width: 991px) {
+        .favorites-left-img {
+          display: block; /* ✅ Asegura que la imagen aparezca */
+          width: 100%;
+          margin-bottom: 1rem;
+        }
+
+        .favorites-left-img img {
+          width: 100%;
+          height: auto;
+          object-fit: cover;
+        }
+
+        .favorites-right {
+          padding: 2rem 1rem;
+          text-align: center;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .favorite-img {
+          width: 140px;
+          height: 140px;
+        }
+        .favorite-card {
+          height: auto; /* en móvil dejamos que crezca */
+        }
+      }
+      .btn-outline-gold {
+        padding: 10px 25px !important;
+        font-size: 1rem !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Header (cargado dinámicamente) -->
+    <div id="header-placeholder"></div>
+
+    <!-- Hero Section -->
+    <section
+      class="hero-menu-section"
+      style="background-image: url('img/our-menu.png')"
+    >
+      <div class="overlay"></div>
+      <div class="container">
+        <h1 class="display-4 fw-bold">Our Menu</h1>
+        <p class="lead">
+          Experience the finest wood-fired pizzas, handcrafted pastas, and
+          authentic Italian flavors.
+        </p>
       </div>
+    </section>
 
-      <!-- Contenido a la derecha -->
-      <div class="col-lg-7 p-5 favorites-right">
-        <h2 class="text-gold fw-bold text-uppercase mb-4 text-center text-lg-start">Customer Favorites</h2>
+    <!-- Customer Favorites Section -->
+    <section id="customer-favorites" class="">
+      <div class="container-fluid p-0">
+        <div class="row g-0">
+          <!-- Imagen izquierda -->
+          <div class="col-lg-5 favorites-left-img">
+            <img
+              src="img/popular.png"
+              alt="Restaurant Interior"
+              class="img-fluid w-100 h-100"
+            />
+          </div>
+
+          <!-- Contenido a la derecha -->
+          <div class="col-lg-7 p-5 favorites-right">
+            <h2
+              class="text-gold fw-bold text-uppercase mb-4 text-center text-lg-start"
+            >
+              Customer Favorites
+            </h2>
+            <div class="row g-4">
+              <!-- Item 1 -->
+              <div class="col-12 col-sm-6 col-lg-3">
+                <div class="favorite-card">
+                  <div class="favorite-img">
+                    <img src="img/pizza.png" alt="BBQ Pizza" />
+                  </div>
+                  <h5 class="favorite-title">BBQ Pizza</h5>
+                  <a href="#" class="btn btn-outline-gold btn-sm">View Menu</a>
+                </div>
+              </div>
+
+              <!-- Item 2 -->
+              <div class="col-12 col-sm-6 col-lg-3">
+                <div class="favorite-card">
+                  <div class="favorite-img">
+                    <img src="img/pizza2.png" alt="Four Cheese Pizza" />
+                  </div>
+                  <h5 class="favorite-title">Four Cheese Pizza</h5>
+                  <a href="#" class="btn btn-outline-gold btn-sm">View Menu</a>
+                </div>
+              </div>
+
+              <!-- Item 3 -->
+              <div class="col-12 col-sm-6 col-lg-3">
+                <div class="favorite-card">
+                  <div class="favorite-img">
+                    <img src="img/pizza3.png" alt="Marinara Pizza" />
+                  </div>
+                  <h5 class="favorite-title">Marinara Pizza</h5>
+                  <a href="#" class="btn btn-outline-gold btn-sm">View Menu</a>
+                </div>
+              </div>
+
+              <!-- Item 4 -->
+              <div class="col-12 col-sm-6 col-lg-3">
+                <div class="favorite-card">
+                  <div class="favorite-img">
+                    <img src="img/pizza4.png" alt="Seafood Pizza" />
+                  </div>
+                  <h5 class="favorite-title">Seafood Pizza</h5>
+                  <a href="#" class="btn btn-outline-gold btn-sm">View Menu</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAIN MENU SECTION -->
+    <section id="main-menu" class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-5 fw-bold text-uppercase text-white">
+          Main Menu
+        </h2>
+
         <div class="row g-4">
-
-          <!-- Item 1 -->
-          <div class="col-12 col-sm-6 col-lg-3">
-            <div class="favorite-card">
-              <div class="favorite-img">
-                <img src="img/pizza.png" alt="BBQ Pizza">
+          <div class="col-md-6 col-lg-4">
+            <div class="menu-card">
+              <div class="menu-img">
+                <img src="img/pasta.png" alt="Appetizers" />
+                <div class="overlay"></div>
+                <h3 class="category-title">Appetizers</h3>
               </div>
-              <h5 class="favorite-title">BBQ Pizza</h5>
-              <a href="#" class="btn btn-outline-gold btn-sm">View Menu</a>
             </div>
           </div>
 
-          <!-- Item 2 -->
-          <div class="col-12 col-sm-6 col-lg-3">
-            <div class="favorite-card">
-              <div class="favorite-img">
-                <img src="img/pizza2.png" alt="Four Cheese Pizza">
+          <div class="col-md-6 col-lg-4">
+            <div class="menu-card">
+              <div class="menu-img">
+                <img src="img/salad.png" alt="Salads" />
+                <div class="overlay"></div>
+                <h3 class="category-title">Salads</h3>
               </div>
-              <h5 class="favorite-title">Four Cheese Pizza</h5>
-              <a href="#" class="btn btn-outline-gold btn-sm">View Menu</a>
             </div>
           </div>
 
-          <!-- Item 3 -->
-          <div class="col-12 col-sm-6 col-lg-3">
-            <div class="favorite-card">
-              <div class="favorite-img">
-                <img src="img/pizza3.png" alt="Marinara Pizza">
+          <div class="col-md-6 col-lg-4">
+            <div class="menu-card">
+              <div class="menu-img">
+                <img src="img/entree.png" alt="Entrees" />
+                <div class="overlay"></div>
+                <h3 class="category-title">Entrees</h3>
               </div>
-              <h5 class="favorite-title">Marinara Pizza</h5>
-              <a href="#" class="btn btn-outline-gold btn-sm">View Menu</a>
             </div>
           </div>
 
-          <!-- Item 4 -->
-          <div class="col-12 col-sm-6 col-lg-3">
-            <div class="favorite-card">
-              <div class="favorite-img">
-                <img src="img/pizza4.png" alt="Seafood Pizza">
+          <div class="col-md-6 col-lg-4">
+            <div class="menu-card">
+              <div class="menu-img">
+                <img src="img/pasta.png" alt="Pastas" />
+                <div class="overlay"></div>
+                <h3 class="category-title">Pastas</h3>
               </div>
-              <h5 class="favorite-title">Seafood Pizza</h5>
-              <a href="#" class="btn btn-outline-gold btn-sm">View Menu</a>
             </div>
           </div>
 
-        </div>
-      </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="menu-card">
+              <div class="menu-img">
+                <img src="img/pizza.png" alt="Pies" />
+                <div class="overlay"></div>
+                <h3 class="category-title">Pies</h3>
+              </div>
+            </div>
+          </div>
 
-    </div>
-  </div>
-</section>
+          <div class="col-md-6 col-lg-4">
+            <div class="menu-card">
+              <div class="menu-img">
+                <img src="img/sanwich.png" alt="Subs and Paninis" />
+                <div class="overlay"></div>
+                <h3 class="category-title">Subs and Paninis</h3>
+              </div>
+            </div>
+          </div>
 
+          <div class="col-md-6 col-lg-4">
+            <div class="menu-card">
+              <div class="menu-img">
+                <img src="img/drinks.png" alt="Drinks" />
+                <div class="overlay"></div>
+                <h3 class="category-title">Drinks</h3>
+              </div>
+            </div>
+          </div>
 
+          <div class="col-md-6 col-lg-4">
+            <div class="menu-card">
+              <div class="menu-img">
+                <img src="img/dessert.png" alt="Sides" />
+                <div class="overlay"></div>
+                <h3 class="category-title">Sides</h3>
+              </div>
+            </div>
+          </div>
 
-  <!-- MAIN MENU SECTION -->
-<section id="main-menu" class="py-5">
-  <div class="container">
-    <h2 class="text-center mb-5 fw-bold text-uppercase text-white">Main Menu</h2>
-
-    <div class="row g-4">
-
-      <!-- Pizzas -->
-      <div class="col-md-6 col-lg-4">
-        <div class="menu-card">
-          <div class="menu-img">
-            <img src="img/pizza.png" alt="Pizzas">
-            <div class="overlay"></div>
-            <h3 class="category-title">Pizzas</h3>
+          <div class="col-md-6 col-lg-4">
+            <div class="menu-card">
+              <div class="menu-img">
+                <img src="img/pasta.png" alt="Kids Menu" />
+                <div class="overlay"></div>
+                <h3 class="category-title">Kids Menu</h3>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- Pastas -->
-      <div class="col-md-6 col-lg-4">
-        <div class="menu-card">
-          <div class="menu-img">
-            <img src="img/pasta.png" alt="Pastas">
-            <div class="overlay"></div>
-            <h3 class="category-title">Pastas</h3>
+    <!-- Menu catering -->
+    <section id="catering-menu" class="py-5" style="background-color: #101010">
+      <div class="container">
+        <h2
+          class="text-center mb-5 fw-bold text-uppercase"
+          style="color: #bf9861"
+        >
+          Catering Menu
+        </h2>
+
+        <div class="row g-4">
+          <!-- Pasta Trays -->
+          <div class="col-md-6 col-lg-3">
+            <div class="card h-100 border-0 shadow">
+              <img src="img/pasta.png" class="card-img-top" alt="Pasta Trays" />
+              <div class="card-body">
+                <h5 class="card-title fw-bold text-gold">Pasta Trays</h5>
+                <ul class="list-unstyled mb-0">
+                  <li>
+                    Penne alla Vodka – <span class="text-gold">$59.99</span>
+                  </li>
+                  <li>Baked Ziti – <span class="text-gold">$49.99</span></li>
+                  <li>Alfredo Penne – <span class="text-gold">$59.99</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Entree Trays -->
+          <div class="col-md-6 col-lg-3">
+            <div class="card h-100 border-0 shadow">
+              <img
+                src="img/entree.png"
+                class="card-img-top"
+                alt="Entree Trays"
+              />
+              <div class="card-body">
+                <h5 class="card-title fw-bold text-gold">Entree Trays</h5>
+                <ul class="list-unstyled mb-0">
+                  <li>Chicken Parm – <span class="text-gold">$89.99</span></li>
+                  <li>Eggplant Parm – <span class="text-gold">$79.99</span></li>
+                  <li>
+                    Meatballs Marinara – <span class="text-gold">$69.99</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Salad & Sides -->
+          <div class="col-md-6 col-lg-3">
+            <div class="card h-100 border-0 shadow">
+              <img
+                src="img/salad.png"
+                class="card-img-top"
+                alt="Salad & Side Platters"
+              />
+              <div class="card-body">
+                <h5 class="card-title fw-bold text-gold">Salad & Sides</h5>
+                <ul class="list-unstyled mb-0">
+                  <li>Caesar Salad – <span class="text-gold">$39.99</span></li>
+                  <li>Garden Salad – <span class="text-gold">$34.99</span></li>
+                  <li>
+                    Garlic Bread (30 pcs) –
+                    <span class="text-gold">$24.99</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dessert Tray -->
+          <div class="col-md-6 col-lg-3">
+            <div class="card h-100 border-0 shadow">
+              <img
+                src="img/dessert.png"
+                class="card-img-top"
+                alt="Dessert Tray"
+              />
+              <div class="card-body">
+                <h5 class="card-title fw-bold text-gold">Dessert Tray</h5>
+                <ul class="list-unstyled mb-0">
+                  <li>
+                    Tiramisu / Mini Cannoli –
+                    <span class="text-gold">$44.99</span>
+                  </li>
+                  <li>
+                    Tiramisu / Mini Cannoli –
+                    <span class="text-gold">$44.99</span>
+                  </li>
+                  <li>
+                    Tiramisu / Mini Cannoli –
+                    <span class="text-gold">$44.99</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Botones -->
+        <div class="text-center mt-5">
+          <a href="#" class="btn btn-gold m-2">Request Catering Quote</a>
+          <a href="#" class="btn btn-outline-gold m-2"
+            >Download Catering Menu PDF</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== Event Packages ====== -->
+    <section
+      id="event-packages"
+      class="py-5"
+      style="
+        background-image: url('img/events-intro.png');
+        background-size: cover;
+        background-position: center;
+        position: relative;
+      "
+    >
+      <div class="overlay"></div>
+      <div class="container position-relative">
+        <h2 class="text-center fw-bold text-gold mb-5">Event Packages</h2>
+
+        <div class="row g-4">
+          <div class="col-md-4 d-flex">
+            <div class="package-card text-center p-4 flex-fill">
+              <h5 class="fw-bold text-gold">Option #1</h5>
+              <p class="price text-gold fw-bold fs-4 mb-4">
+                $38 <span class="fs-6">per person</span>
+              </p>
+
+              <ul
+                class="list-unstyled mb-4 text-start mx-auto"
+                style="max-width: 300px"
+              >
+                <li>
+                  <strong>Appetizer:</strong> Rollatini or Meatballs<br /><em
+                    >Shared, family style</em
+                  >
+                </li>
+                <li class="mt-2">
+                  <strong>Salad:</strong> House or Caesar<br /><em
+                    >Single serving</em
+                  >
+                </li>
+                <li class="mt-2">
+                  <strong>Pasta:</strong> Vodka or Bolognese<br /><em
+                    >Single serving</em
+                  >
+                </li>
+                <li class="mt-2">
+                  <strong>Entrée:</strong> Piccata, Marsala, or Scarpariello<br /><em
+                    >Single serving</em
+                  >
+                </li>
+                <li class="mt-2">Includes soft drinks</li>
+              </ul>
+
+              <div class="text-gold small mb-3">
+                <p class="mb-1">Sun–Thu: 30 guest minimum</p>
+                <p class="mb-1">Fri–Sat: 40 guest minimum</p>
+                <p class="mb-1">No room rental fees</p>
+              </div>
+
+              <a href="menu.pdf" class="btn btn-outline-gold mt-auto"
+                >Download Menu</a
+              >
+            </div>
+          </div>
+
+          <div class="col-md-4 d-flex">
+            <div class="package-card text-center p-4 flex-fill">
+              <h5 class="fw-bold text-gold">Option #2</h5>
+              <p class="price text-gold fw-bold fs-4 mb-4">
+                $45 <span class="fs-6">per person</span>
+              </p>
+
+              <ul
+                class="list-unstyled mb-4 text-start mx-auto"
+                style="max-width: 300px"
+              >
+                <li>
+                  <strong>Appetizer:</strong> Caprese, Calamari, or Rollatini<br /><em
+                    >Shared, family style</em
+                  >
+                </li>
+                <li class="mt-2">
+                  <strong>Salad:</strong> Caesar or Greek<br /><em
+                    >Single serving</em
+                  >
+                </li>
+                <li class="mt-2">
+                  <strong>Pasta:</strong> Vodka or Bolognese<br /><em
+                    >Single serving</em
+                  >
+                </li>
+                <li class="mt-2">
+                  <strong>Entrée:</strong> Francese, Marsala, Scarpariello, or
+                  Parmigiana<br /><em>Single serving</em>
+                </li>
+                <li class="mt-2">Includes soft drinks</li>
+              </ul>
+
+              <div class="text-gold small mb-3">
+                <p class="mb-1">Sun–Thu: 30 guest minimum</p>
+                <p class="mb-1">Fri–Sat: 40 guest minimum</p>
+                <p class="mb-1">No room rental fees</p>
+              </div>
+
+              <a href="menu.pdf" class="btn btn-outline-gold mt-auto"
+                >Download Menu</a
+              >
+            </div>
+          </div>
+
+          <div class="col-md-4 d-flex">
+            <div class="package-card text-center p-4 flex-fill">
+              <h5 class="fw-bold text-gold">Option #3</h5>
+              <p class="price text-gold fw-bold fs-4 mb-4">
+                $54 <span class="fs-6">per person</span>
+              </p>
+
+              <ul
+                class="list-unstyled mb-4 text-start mx-auto"
+                style="max-width: 300px"
+              >
+                <li>
+                  <strong>Appetizer:</strong> Rollatini, Meatballs, or Shrimp<br /><em
+                    >Shared, family style</em
+                  >
+                </li>
+                <li class="mt-2">
+                  <strong>Salad:</strong> Forno or Arugula<br /><em
+                    >Single serving</em
+                  >
+                </li>
+                <li class="mt-2">
+                  <strong>Pasta:</strong> Vodka or Bolognese<br /><em
+                    >Single serving</em
+                  >
+                </li>
+                <li class="mt-2">
+                  <strong>Entrée:</strong> Martini, Veal, Seafood, or Salmon<br /><em
+                    >Single serving</em
+                  >
+                </li>
+                <li class="mt-2">Includes soft drinks</li>
+              </ul>
+
+              <div class="text-gold small mb-3">
+                <p class="mb-1">Sun–Thu: 30 guest minimum</p>
+                <p class="mb-1">Fri–Sat: 40 guest minimum</p>
+                <p class="mb-1">No room rental fees</p>
+              </div>
+
+              <a href="menu.pdf" class="btn btn-outline-gold mt-auto"
+                >Download Menu</a
+              >
+            </div>
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- Entrées -->
-      <div class="col-md-6 col-lg-4">
-        <div class="menu-card">
-          <div class="menu-img">
-            <img src="img/entree.png" alt="Entrées">
-            <div class="overlay"></div>
-            <h3 class="category-title">Entrées</h3>
-          </div>
-        </div>
-      </div>
+    <!-- Footer (cargado dinámicamente) -->
+    <div id="footer-placeholder"></div>
 
-      <!-- Sides & Salads -->
-      <div class="col-md-6 col-lg-4">
-        <div class="menu-card">
-          <div class="menu-img">
-            <img src="img/salad.png" alt="Sides & Salads">
-            <div class="overlay"></div>
-            <h3 class="category-title">Sides & Salads</h3>
-          </div>
-        </div>
-      </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/load-components.js"></script>
 
-      <!-- Sandwiches -->
-      <div class="col-md-6 col-lg-4">
-        <div class="menu-card">
-          <div class="menu-img">
-            <img src="img/sanwich.png" alt="Sandwiches">
-            <div class="overlay"></div>
-            <h3 class="category-title">Sandwiches</h3>
-          </div>
-        </div>
-      </div>
-
-      <!-- Desserts -->
-      <div class="col-md-6 col-lg-4">
-        <div class="menu-card">
-          <div class="menu-img">
-            <img src="img/dessert.png" alt="Desserts">
-            <div class="overlay"></div>
-            <h3 class="category-title">Desserts</h3>
-          </div>
-        </div>
-      </div>
-
-      <!-- Drinks -->
-      <div class="col-md-6 col-lg-4">
-        <div class="menu-card">
-          <div class="menu-img">
-            <img src="img/drinks.png" alt="Drinks">
-            <div class="overlay"></div>
-            <h3 class="category-title">Drinks</h3>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-
-<!-- Menu catering -->
-<section id="catering-menu" class="py-5" style="background-color: #101010;">
-  <div class="container">
-    <h2 class="text-center mb-5 fw-bold text-uppercase" style="color: #bf9861;">Catering Menu</h2>
-
-    <div class="row g-4">
-
-      <!-- Pasta Trays -->
-      <div class="col-md-6 col-lg-3">
-        <div class="card h-100 border-0 shadow">
-          <img src="img/pasta.png" class="card-img-top" alt="Pasta Trays">
-          <div class="card-body">
-            <h5 class="card-title fw-bold text-gold">Pasta Trays</h5>
-            <ul class="list-unstyled mb-0">
-              <li>Penne alla Vodka – <span class="text-gold">$59.99</span></li>
-              <li>Baked Ziti – <span class="text-gold">$49.99</span></li>
-              <li>Alfredo Penne – <span class="text-gold">$59.99</span></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- Entree Trays -->
-      <div class="col-md-6 col-lg-3">
-        <div class="card h-100 border-0 shadow">
-          <img src="img/entree.png" class="card-img-top" alt="Entree Trays">
-          <div class="card-body">
-            <h5 class="card-title fw-bold text-gold">Entree Trays</h5>
-            <ul class="list-unstyled mb-0">
-              <li>Chicken Parm – <span class="text-gold">$89.99</span></li>
-              <li>Eggplant Parm – <span class="text-gold">$79.99</span></li>
-              <li>Meatballs Marinara – <span class="text-gold">$69.99</span></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- Salad & Sides -->
-      <div class="col-md-6 col-lg-3">
-        <div class="card h-100 border-0 shadow">
-          <img src="img/salad.png" class="card-img-top" alt="Salad & Side Platters">
-          <div class="card-body">
-            <h5 class="card-title fw-bold text-gold">Salad & Sides</h5>
-            <ul class="list-unstyled mb-0">
-              <li>Caesar Salad – <span class="text-gold">$39.99</span></li>
-              <li>Garden Salad – <span class="text-gold">$34.99</span></li>
-              <li>Garlic Bread (30 pcs) – <span class="text-gold">$24.99</span></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- Dessert Tray -->
-      <div class="col-md-6 col-lg-3">
-        <div class="card h-100 border-0 shadow">
-          <img src="img/dessert.png" class="card-img-top" alt="Dessert Tray">
-          <div class="card-body">
-            <h5 class="card-title fw-bold text-gold">Dessert Tray</h5>
-            <ul class="list-unstyled mb-0">
-              <li>Tiramisu / Mini Cannoli – <span class="text-gold">$44.99</span></li>
-              <li>Tiramisu / Mini Cannoli – <span class="text-gold">$44.99</span></li>
-              <li>Tiramisu / Mini Cannoli – <span class="text-gold">$44.99</span></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Botones -->
-    <div class="text-center mt-5">
-      <a href="#" class="btn btn-gold m-2">Request Catering Quote</a>
-      <a href="#" class="btn btn-outline-gold m-2">Download Catering Menu PDF</a>
-    </div>
-  </div>
-</section>
-
-
-<!-- ====== Event Packages ====== -->
-<section id="event-packages" class="py-5" 
-         style="background-image: url('img/events-intro.png'); background-size: cover; background-position: center; position: relative;">
-  <div class="overlay"></div>
-  <div class="container position-relative">
-    <h2 class="text-center fw-bold text-gold mb-5">Event Packages</h2>
-    
-    <div class="row g-4">
-
-      <!-- Package 1 -->
-      <div class="col-md-4 d-flex">
-        <div class="package-card text-center p-4 flex-fill">
-          <h5 class="fw-bold text-gold">Classic Italian Experience</h5>
-          <p class="price text-gold fw-bold fs-4 mb-4">$45 <span class="fs-6">per person</span></p>
-          <ul class="list-unstyled mb-4">
-            <li>2 Wood-Fired Pizzas per person</li>
-            <li>Family-Style Pasta</li>
-            <li>Garden Salad</li>
-            <li>Garlic Bread</li>
-            <li>Dessert Platter</li>
-          </ul>
-          <a href="#booking-form" class="btn btn-outline-gold">Book Now</a>
-        </div>
-      </div>
-
-      <!-- Package 2 -->
-      <div class="col-md-4 d-flex">
-        <div class="package-card highlight text-center p-4 flex-fill">
-          <span class="badge-popular">Most Popular</span>
-          <h5 class="fw-bold text-gold">Premium Italian Feast</h5>
-          <p class="price text-gold fw-bold fs-4 mb-4">$65 <span class="fs-6">per person</span></p>
-          <ul class="list-unstyled mb-4">
-            <li>3 Wood-Fired Pizzas per person</li>
-            <li>2 Pasta Options</li>
-            <li>Antipasto Platter</li>
-            <li>Roasted Chicken or Pollo Parmigiana</li>
-            <li>Salads & Dessert Platter</li>
-          </ul>
-          <a href="#booking-form" class="btn btn-outline-gold">Book Now</a>
-        </div>
-      </div>
-
-      <!-- Package 3 -->
-      <div class="col-md-4 d-flex">
-        <div class="package-card text-center p-4 flex-fill">
-          <h5 class="fw-bold text-gold">Ultimate Italian Celebration</h5>
-          <p class="price text-gold fw-bold fs-4 mb-4">$85 <span class="fs-6">per person</span></p>
-          <ul class="list-unstyled mb-4">
-            <li>4 Wood-Fired Pizzas per person</li>
-            <li>Full Pasta Buffet</li>
-            <li>Antipasto Platter & Mixed Greens</li>
-            <li>Pollo Parmigiana, Chicken Francese, Roast Beef</li>
-            <li>Dessert Platter</li>
-          </ul>
-          <a href="#booking-form" class="btn btn-outline-gold">Book Now</a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-  <!-- Footer (cargado dinámicamente) -->
-  <div id="footer-placeholder"></div>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="js/script.js"></script>
-  <script src="js/load-components.js"></script>
-
-  <script>
-    // Cambiar color de header al hacer scroll
-   document.addEventListener('scroll', function() {
-  const header = document.getElementById('main-header');
-  if (window.scrollY > 50) {
-    header.classList.add('scrolled');
-  } else {
-    header.classList.remove('scrolled');
-  }
-});
-
-  </script>
-
-</body>
+    <script>
+      // Cambiar color de header al hacer scroll
+      document.addEventListener("scroll", function () {
+        const header = document.getElementById("main-header");
+        if (window.scrollY > 50) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
+      });
+    </script>
+  </body>
 </html>
