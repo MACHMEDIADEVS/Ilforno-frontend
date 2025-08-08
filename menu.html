@@ -292,6 +292,13 @@
         color: #1a1a1a;
       }
 
+      #event-packages .package-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+      }
+
       /* Responsivo */
       @media (max-width: 991px) {
         .package-card {
@@ -737,6 +744,7 @@
     </section>
 
     <!-- ====== Event Packages ====== -->
+    <!-- ====== Event Packages ====== -->
     <section
       id="event-packages"
       class="py-5"
@@ -752,8 +760,9 @@
         <h2 class="text-center fw-bold text-gold mb-5">Event Packages</h2>
 
         <div class="row g-4">
+          <!-- Package 1 -->
           <div class="col-md-4 d-flex">
-            <div class="package-card text-center p-4 flex-fill">
+            <div class="package-card text-center p-4 d-flex flex-column">
               <h5 class="fw-bold text-gold">Option #1</h5>
               <p class="price text-gold fw-bold fs-4 mb-4">
                 $38 <span class="fs-6">per person</span>
@@ -791,15 +800,14 @@
                 <p class="mb-1">Fri–Sat: 40 guest minimum</p>
                 <p class="mb-1">No room rental fees</p>
               </div>
-
-              <a href="menu.pdf" class="btn btn-outline-gold mt-auto"
-                >Download Menu</a
-              >
             </div>
           </div>
 
+          <!-- Package 2 -->
           <div class="col-md-4 d-flex">
-            <div class="package-card text-center p-4 flex-fill">
+            <div
+              class="package-card highlight text-center p-4 d-flex flex-column"
+            >
               <h5 class="fw-bold text-gold">Option #2</h5>
               <p class="price text-gold fw-bold fs-4 mb-4">
                 $45 <span class="fs-6">per person</span>
@@ -836,15 +844,12 @@
                 <p class="mb-1">Fri–Sat: 40 guest minimum</p>
                 <p class="mb-1">No room rental fees</p>
               </div>
-
-              <a href="menu.pdf" class="btn btn-outline-gold mt-auto"
-                >Download Menu</a
-              >
             </div>
           </div>
 
+          <!-- Package 3 -->
           <div class="col-md-4 d-flex">
-            <div class="package-card text-center p-4 flex-fill">
+            <div class="package-card text-center p-4 d-flex flex-column">
               <h5 class="fw-bold text-gold">Option #3</h5>
               <p class="price text-gold fw-bold fs-4 mb-4">
                 $54 <span class="fs-6">per person</span>
@@ -882,12 +887,16 @@
                 <p class="mb-1">Fri–Sat: 40 guest minimum</p>
                 <p class="mb-1">No room rental fees</p>
               </div>
-
-              <a href="menu.pdf" class="btn btn-outline-gold mt-auto"
-                >Download Menu</a
-              >
             </div>
           </div>
+        </div>
+
+        <!-- Botones -->
+        <div class="text-center mt-5">
+          <a href="#" class="btn btn-gold m-2">BOOK VENUE</a>
+          <a href="#" class="btn btn-outline-gold m-2"
+            >DOWNLOAD MENU</a
+          >
         </div>
       </div>
     </section>
