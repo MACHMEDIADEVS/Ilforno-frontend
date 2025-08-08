@@ -56,18 +56,21 @@
     }
 
     /* Ajustes específicos para móviles */
-    @media (max-width: 576px) {
-      .hero-section .display-4 {
-        font-size: 2rem;
-      }
+   @media (max-width: 576px) {
+  .hero-section .display-4 {
+    font-size: 2rem;
+  }
 
-      .hero-section .hero-buttons .custom-btn {
-        width: 100%;
-        max-width: 250px;
-        font-size: 1rem;
-        padding: 12px 0;
-      }
+  .hero-buttons {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 16px !important;
+  }
 
+  .hero-buttons a {
+    width: 100%;
+    max-width: 260px;
+  }
       .hero-section .ms-3 {
         margin-left: 0 !important; /* Elimina el margen entre botones */
       }
