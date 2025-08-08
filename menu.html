@@ -75,6 +75,10 @@
         background-color: #1a1a1a;
       }
 
+      #main-menu h2 {
+        color: #bf9861;
+      }
+
       .menu-card {
         border: 2px solid rgba(191, 152, 97, 0.5);
         border-radius: 8px;
@@ -364,8 +368,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        color: #bf9861;
-        font-weight: bold;
+        color: #bf9861;       
         text-align: center;
       }
 
@@ -480,6 +483,18 @@
 
           <!-- Contenido a la derecha -->
           <div class="col-lg-7 p-5 favorites-right">
+            <style>
+              .btn-outline-golden {
+        background-color: transparent;
+        color: #bf9861;
+        border: 2px solid #bf9861;
+        font-weight: bold;
+        padding: 10px 5px;
+        border-radius: 8px;
+        text-transform: uppercase;
+        transition: all 0.3s ease;
+      }
+            </style>
             <h2
               class="text-gold fw-bold text-uppercase mb-4 text-center text-lg-start"
             >
@@ -492,8 +507,8 @@
                   <div class="favorite-img">
                     <img src="img/pizza.png" alt="BBQ Pizza" />
                   </div>
-                  <h5 class="favorite-title">BBQ Pizza</h5>
-                  <a href="#" class="btn btn-outline-gold btn-sm">Order Online</a>
+                  <h5 class="favorite-title">Half Cheese Half Chicken</h5>
+                  <a href="#" class="btn btn-outline-golden btn-sm">Order Online</a>
                 </div>
               </div>
 
@@ -503,8 +518,8 @@
                   <div class="favorite-img">
                     <img src="img/pizza2.png" alt="Four Cheese Pizza" />
                   </div>
-                  <h5 class="favorite-title">Four Cheese Pizza</h5>
-                  <a href="#" class="btn btn-outline-gold btn-sm">Order Online</a>
+                  <h5 class="favorite-title">Classic Cheese Pizza</h5>
+                  <a href="#" class="btn btn-outline-golden btn-sm">Order Online</a>
                 </div>
               </div>
 
@@ -514,8 +529,8 @@
                   <div class="favorite-img">
                     <img src="img/pizza3.png" alt="Marinara Pizza" />
                   </div>
-                  <h5 class="favorite-title">Marinara Pizza</h5>
-                  <a href="#" class="btn btn-outline-gold btn-sm">Order Online</a>
+                  <h5 class="favorite-title">Meat Lover’s Pizza</h5>
+                  <a href="#" class="btn btn-outline-golden btn-sm">Order Online</a>
                 </div>
               </div>
 
@@ -525,8 +540,8 @@
                   <div class="favorite-img">
                     <img src="img/pizza4.png" alt="Seafood Pizza" />
                   </div>
-                  <h5 class="favorite-title">Seafood Pizza</h5>
-                  <a href="#" class="btn btn-outline-gold btn-sm">Order Online</a>
+                  <h5 class="favorite-title">Vegetable Pizza</h5>
+                  <a href="#" class="btn btn-outline-golden btn-sm">Order Online</a>
                 </div>
               </div>
             </div>
@@ -538,7 +553,7 @@
     <!-- MAIN MENU SECTION -->
     <section id="main-menu" class="py-5">
       <div class="container">
-        <h2 class="text-center mb-5 fw-bold text-uppercase text-white">
+        <h2 class="text-center mb-5 fw-bold text-uppercase">
           Main Menu
         </h2>
 
@@ -744,162 +759,108 @@
     </section>
 
     <!-- ====== Event Packages ====== -->
-    <!-- ====== Event Packages ====== -->
-    <section
-      id="event-packages"
-      class="py-5"
-      style="
-        background-image: url('img/events-intro.png');
-        background-size: cover;
-        background-position: center;
-        position: relative;
-      "
-    >
-      <div class="overlay"></div>
-      <div class="container position-relative">
-        <h2 class="text-center fw-bold text-gold mb-5">Event Packages</h2>
+<section
+  id="event-packages"
+  class="py-5"
+  style="
+    background-image: url('img/events-intro.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  "
+>
+  <div class="overlay"></div>
 
-        <div class="row g-4">
-          <!-- Package 1 -->
-          <div class="col-md-4 d-flex">
-            <div class="package-card text-center p-4 d-flex flex-column">
-              <h5 class="fw-bold text-gold">Option #1</h5>
-              <p class="price text-gold fw-bold fs-4 mb-4">
-                $38 <span class="fs-6">per person</span>
-              </p>
+  <div class="container position-relative">
+    <!-- separador solo en móvil para que el header no tape el primer card -->
+    <div class="d-md-none" style="height:72px;"></div>
 
-              <ul
-                class="list-unstyled mb-4 text-start mx-auto"
-                style="max-width: 300px"
-              >
-                <li>
-                  <strong>Appetizer:</strong> Rollatini or Meatballs<br /><em
-                    >Shared, family style</em
-                  >
-                </li>
-                <li class="mt-2">
-                  <strong>Salad:</strong> House or Caesar<br /><em
-                    >Single serving</em
-                  >
-                </li>
-                <li class="mt-2">
-                  <strong>Pasta:</strong> Vodka or Bolognese<br /><em
-                    >Single serving</em
-                  >
-                </li>
-                <li class="mt-2">
-                  <strong>Entrée:</strong> Piccata, Marsala, or Scarpariello<br /><em
-                    >Single serving</em
-                  >
-                </li>
-                <li class="mt-2">Includes soft drinks</li>
-              </ul>
+    <h2 class="text-center fw-bold text-gold mb-5">Event Packages</h2>
 
-              <div class="text-gold small mb-3">
-                <p class="mb-1">Sun–Thu: 30 guest minimum</p>
-                <p class="mb-1">Fri–Sat: 40 guest minimum</p>
-                <p class="mb-1">No room rental fees</p>
-              </div>
-            </div>
+    <div class="row g-4">
+
+      <!-- Package 1 -->
+      <div class="col-md-4 d-flex">
+        <div class="package-card w-100 rounded-3 p-4 d-flex flex-column gap-2">
+          <h5 class="fw-bold text-gold mb-1 text-center">Option #1</h5>
+          <p class="price text-gold fw-bold fs-4 mb-3 text-center">
+            $38 <span class="fs-6">per person</span>
+          </p>
+
+          <ul class="list-unstyled lh-sm mb-4 text-start mx-auto" style="max-width:300px;">
+            <li><strong>Appetizer:</strong> Rollatini or Meatballs<br><em>Shared, family style</em></li>
+            <li class="mt-2"><strong>Salad:</strong> House or Caesar<br><em>Single serving</em></li>
+            <li class="mt-2"><strong>Pasta:</strong> Vodka or Bolognese<br><em>Single serving</em></li>
+            <li class="mt-2"><strong>Entrée:</strong> Piccata, Marsala, or Scarpariello<br><em>Single serving</em></li>
+            <li class="mt-2">Includes soft drinks</li>
+          </ul>
+
+          <div class="text-gold small mb-0 text-center">
+            <p class="mb-1">Sun–Thu: 30 guest minimum</p>
+            <p class="mb-1">Fri–Sat: 40 guest minimum</p>
+            <p class="mb-0">No room rental fees</p>
           </div>
-
-          <!-- Package 2 -->
-          <div class="col-md-4 d-flex">
-            <div
-              class="package-card highlight text-center p-4 d-flex flex-column"
-            >
-              <h5 class="fw-bold text-gold">Option #2</h5>
-              <p class="price text-gold fw-bold fs-4 mb-4">
-                $45 <span class="fs-6">per person</span>
-              </p>
-
-              <ul
-                class="list-unstyled mb-4 text-start mx-auto"
-                style="max-width: 300px"
-              >
-                <li>
-                  <strong>Appetizer:</strong> Caprese, Calamari, or Rollatini<br /><em
-                    >Shared, family style</em
-                  >
-                </li>
-                <li class="mt-2">
-                  <strong>Salad:</strong> Caesar or Greek<br /><em
-                    >Single serving</em
-                  >
-                </li>
-                <li class="mt-2">
-                  <strong>Pasta:</strong> Vodka or Bolognese<br /><em
-                    >Single serving</em
-                  >
-                </li>
-                <li class="mt-2">
-                  <strong>Entrée:</strong> Francese, Marsala, Scarpariello, or
-                  Parmigiana<br /><em>Single serving</em>
-                </li>
-                <li class="mt-2">Includes soft drinks</li>
-              </ul>
-
-              <div class="text-gold small mb-3">
-                <p class="mb-1">Sun–Thu: 30 guest minimum</p>
-                <p class="mb-1">Fri–Sat: 40 guest minimum</p>
-                <p class="mb-1">No room rental fees</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Package 3 -->
-          <div class="col-md-4 d-flex">
-            <div class="package-card text-center p-4 d-flex flex-column">
-              <h5 class="fw-bold text-gold">Option #3</h5>
-              <p class="price text-gold fw-bold fs-4 mb-4">
-                $54 <span class="fs-6">per person</span>
-              </p>
-
-              <ul
-                class="list-unstyled mb-4 text-start mx-auto"
-                style="max-width: 300px"
-              >
-                <li>
-                  <strong>Appetizer:</strong> Rollatini, Meatballs, or Shrimp<br /><em
-                    >Shared, family style</em
-                  >
-                </li>
-                <li class="mt-2">
-                  <strong>Salad:</strong> Forno or Arugula<br /><em
-                    >Single serving</em
-                  >
-                </li>
-                <li class="mt-2">
-                  <strong>Pasta:</strong> Vodka or Bolognese<br /><em
-                    >Single serving</em
-                  >
-                </li>
-                <li class="mt-2">
-                  <strong>Entrée:</strong> Martini, Veal, Seafood, or Salmon<br /><em
-                    >Single serving</em
-                  >
-                </li>
-                <li class="mt-2">Includes soft drinks</li>
-              </ul>
-
-              <div class="text-gold small mb-3">
-                <p class="mb-1">Sun–Thu: 30 guest minimum</p>
-                <p class="mb-1">Fri–Sat: 40 guest minimum</p>
-                <p class="mb-1">No room rental fees</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Botones -->
-        <div class="text-center mt-5">
-          <a href="#" class="btn btn-gold m-2">BOOK VENUE</a>
-          <a href="#" class="btn btn-outline-gold m-2"
-            >DOWNLOAD MENU</a
-          >
         </div>
       </div>
-    </section>
+
+      <!-- Package 2 -->
+      <div class="col-md-4 d-flex">
+        <div class="package-card w-100 rounded-3 p-4 d-flex flex-column gap-2">
+          <h5 class="fw-bold text-gold mb-1 text-center">Option #2</h5>
+          <p class="price text-gold fw-bold fs-4 mb-3 text-center">
+            $45 <span class="fs-6">per person</span>
+          </p>
+
+          <ul class="list-unstyled lh-sm mb-4 text-start mx-auto" style="max-width:300px;">
+            <li><strong>Appetizer:</strong> Caprese, Calamari, or Rollatini<br><em>Shared, family style</em></li>
+            <li class="mt-2"><strong>Salad:</strong> Caesar or Greek<br><em>Single serving</em></li>
+            <li class="mt-2"><strong>Pasta:</strong> Vodka or Bolognese<br><em>Single serving</em></li>
+            <li class="mt-2"><strong>Entrée:</strong> Francese, Marsala, Scarpariello, or Parmigiana<br><em>Single serving</em></li>
+            <li class="mt-2">Includes soft drinks</li>
+          </ul>
+
+          <div class="text-gold small mb-0 text-center">
+            <p class="mb-1">Sun–Thu: 30 guest minimum</p>
+            <p class="mb-1">Fri–Sat: 40 guest minimum</p>
+            <p class="mb-0">No room rental fees</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Package 3 -->
+      <div class="col-md-4 d-flex">
+        <div class="package-card w-100 rounded-3 p-4 d-flex flex-column gap-2">
+          <h5 class="fw-bold text-gold mb-1 text-center">Option #3</h5>
+          <p class="price text-gold fw-bold fs-4 mb-3 text-center">
+            $54 <span class="fs-6">per person</span>
+          </p>
+
+          <ul class="list-unstyled lh-sm mb-4 text-start mx-auto" style="max-width:300px;">
+            <li><strong>Appetizer:</strong> Rollatini, Meatballs, or Shrimp<br><em>Shared, family style</em></li>
+            <li class="mt-2"><strong>Salad:</strong> Forno or Arugula<br><em>Single serving</em></li>
+            <li class="mt-2"><strong>Pasta:</strong> Vodka or Bolognese<br><em>Single serving</em></li>
+            <li class="mt-2"><strong>Entrée:</strong> Martini, Veal, Seafood, or Salmon<br><em>Single serving</em></li>
+            <li class="mt-2">Includes soft drinks</li>
+          </ul>
+
+          <div class="text-gold small mb-0 text-center">
+            <p class="mb-1">Sun–Thu: 30 guest minimum</p>
+            <p class="mb-1">Fri–Sat: 40 guest minimum</p>
+            <p class="mb-0">No room rental fees</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Botones -->
+    <div class="text-center mt-5">
+      <a href="#" class="btn btn-gold m-2">BOOK VENUE</a>
+      <a href="#" class="btn btn-outline-gold m-2">DOWNLOAD MENU</a>
+    </div>
+  </div>
+</section>
+
 
     <!-- Footer (cargado dinámicamente) -->
     <div id="footer-placeholder"></div>
